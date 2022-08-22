@@ -43,7 +43,7 @@ else:
     chardle_abc != chardle_word[4]
 
 """Turning index of letter into a number and adding it together to figure out total amount of that letter in the word."""
-correct_amount_abc = int(chardle_abc == chardle_word[0]) + int(chardle_abc == chardle_word[1]) + int(chardle_abc == chardle_word[2]) + int(chardle_abc == chardle_word[3]) + int(chardle_abc == chardle_word [4])
+correct_amount_abc = int(chardle_abc == chardle_word[0]) + int(chardle_abc == chardle_word[1]) + int(chardle_abc == chardle_word[2]) + int(chardle_abc == chardle_word[3]) + int(chardle_abc == chardle_word[4])
 
 """Using the above variable made to give back the information of how many instances the guessed letter appears in the word."""
 
@@ -70,8 +70,7 @@ else:
 if correct_amount_abc == 4:
     print("4 instances of " + chardle_abc + " found in " + chardle_word)
 else: 
-    correct_amount_abc !=4
+    correct_amount_abc != 4
 
 if correct_amount_abc == 5:
     print("5 instances of " + chardle_abc + " found in " + chardle_word)
-
