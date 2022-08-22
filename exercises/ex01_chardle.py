@@ -33,4 +33,32 @@ if chardle_abc == chardle_word[4]:
 else:
     chardle_abc != chardle_word[4]
 
+correct_amount_abc = int(chardle_abc == chardle_word[0]) + int(chardle_abc == chardle_word[1]) + int(chardle_abc == chardle_word[2]) + int(chardle_abc == chardle_word[3]) + int(chardle_abc == chardle_word [4])
 
+if correct_amount_abc == 0:
+    print("No instances of " + chardle_abc + " found in " + chardle_word)
+else:
+    correct_amount_abc != 0
+
+if correct_amount_abc == 1:
+    print("1 instance of " + chardle_abc + " found in " + chardle_word)
+else:
+    correct_amount_abc != 1
+
+if correct_amount_abc == 2:
+    print("2 instances of " + chardle_abc + " found in " + chardle_word)
+else: 
+    correct_amount_abc != 2
+
+if correct_amount_abc == 3:
+    print("3 instances of " + chardle_abc + " found in " + chardle_word)
+else: 
+    correct_amount_abc != 3
+
+if correct_amount_abc == 4:
+    print("4 instances of " + chardle_abc + " found in " + chardle_word)
+else: 
+    correct_amount_abc !=4
+
+if correct_amount_abc == 5:
+    print("5 instances of " + chardle_abc + " found in " + chardle_word)
