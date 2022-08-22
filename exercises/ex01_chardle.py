@@ -3,10 +3,16 @@
 __author__ = "730561311"
 
 
-"""First two variables."""
+"""First two variables and making sure answers are related to question given."""
 chardle_word: str = input("Enter a 5-character word: ")
+if len(chardle_word) != 5:
+    print("Error: Word must contain 5 letters")
+    exit()
 
 chardle_abc: str = input("Enter a single character: ")
+if len(chardle_abc) != 1:
+    print("Error: Character must be a single character")
+    exit()
 
 print("Searching for " + chardle_abc + " in " + chardle_word)
 
@@ -36,7 +42,7 @@ if chardle_abc == chardle_word[4]:
 else:
     chardle_abc != chardle_word[4]
 
-"""Using int and addition to figure out total amount of letters that where guessed in the letters of the word."""
+"""Turning index of letter into a number and adding it together to figure out total amount of that letter in the word."""
 correct_amount_abc = int(chardle_abc == chardle_word[0]) + int(chardle_abc == chardle_word[1]) + int(chardle_abc == chardle_word[2]) + int(chardle_abc == chardle_word[3]) + int(chardle_abc == chardle_word [4])
 
 """Using the above variable made to give back the information of how many instances the guessed letter appears in the word."""
