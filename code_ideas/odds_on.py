@@ -19,6 +19,26 @@ if starting_it == str("okay"):
             print("Your number: " + str(st_number))
             print("My number: " + str(st_number))
             print("Looks like I won! Now you have to play another game of odds. That was the dare after all.")
+            print("I'm giving my odds of 10, if you don't guess my number then we're playing another game! :)")
+            st_number: int = int(input("Ok now that we have odds, type your number and when you hit enter I will type mine. Enter number: "))
+            if st_number <= 10:
+                print("Your number: " + str(st_number))
+                my_number = st_number - 1
+                print("My number: " + str(my_number))
+            else:
+                st_number > give_me_odds
+                print("My number: 1")
+                print("Your number: " + str(st_number))
+                print("Hey your number isn't within odds")
+                st_number: int = int(input("Your number needs to be within your odds, it can't be over odds or below 1. Try again, enter your number: "))
+                if st_number <= 10:
+                    print("Your number: " + str(st_number))
+                    print("My number: " + str(my_number))
+                else: 
+                    st_number > 10
+                    print("My number: 4")
+                    print("Your number: " + str(st_number))
+                    print("Well I can't play with you not following instructions.")            
         else:
             st_number > give_me_odds
             print("My number: 1")
@@ -34,7 +54,26 @@ if starting_it == str("okay"):
             print("Your number: " + str(st_number))
             print("My number: " + str(st_number))
             print("Looks like I won! Now you have to play another game of odds. That was the dare after all.")
-            
+            print("I'm giving my odds of 10, if you don't guess my number then we're playing another game! :)")
+            st_number: int = int(input("Ok now that we have odds, type your number and when you hit enter I will type mine. Enter number: "))
+            if st_number <= 10:
+                print("Your number: " + str(st_number))
+                my_number = st_number - 1
+                print("My number: " + str(my_number))
+            else:
+                st_number > give_me_odds
+                print("My number: 1")
+                print("Your number: " + str(st_number))
+                print("Hey your number isn't within odds")
+                st_number: int = int(input("Your number needs to be within your odds, it can't be over odds or below 1. Try again, enter your number: "))
+                if st_number <= 10:
+                    print("Your number: " + str(st_number))
+                    print("My number: " + str(my_number))
+                else: 
+                    st_number > 10
+                    print("My number: 4")
+                    print("Your number: " + str(st_number))
+                    print("Well I can't play with you not following instructions.")
         else:
             give_me_odds <= 2
             print("Wow, if you're going to be this stubborn, then I won't play. :( ")
@@ -60,6 +99,26 @@ else:
                 print("Your number: " + str(st_number))
                 print("My number: " + str(st_number))
                 print("Looks like I won! Now you have to play another game of odds. That was the dare after all.")
+                print("I'm giving my odds of 10, if you don't guess my number then we're playing another game! :)")
+                st_number: int = int(input("Ok now that we have odds, type your number and when you hit enter I will type mine. Enter number: "))
+                if st_number <= 10:
+                    print("Your number: " + str(st_number))
+                    my_number = st_number - 1
+                    print("My number: " + str(my_number))
+                else:
+                    st_number > give_me_odds
+                    print("My number: 1")
+                    print("Your number: " + str(st_number))
+                    print("Hey your number isn't within odds")
+                    st_number: int = int(input("Your number needs to be within your odds, it can't be over odds or below 1. Try again, enter your number: "))
+                    if st_number <= 10:
+                        print("Your number: " + str(st_number))
+                        print("My number: " + str(my_number))
+                    else: 
+                        st_number > 10
+                        print("My number: 4")
+                        print("Your number: " + str(st_number))
+                        print("Well I can't play with you not following instructions.")
             
             else:
                 give_me_odds <= 2
