@@ -33,6 +33,7 @@ if starting_it == str("okay"):
                 st_number: int = int(input("Your number needs to be within your odds, it can't be over odds or below 1. Try again, enter your number: "))
                 if st_number <= 10:
                     print("Your number: " + str(st_number))
+                    my_number = st_number - 1
                     print("My number: " + str(my_number))
                 else: 
                     st_number > 10
@@ -69,6 +70,7 @@ if starting_it == str("okay"):
                 st_number: int = int(input("Your number needs to be within your odds, it can't be over odds or below 1. Try again, enter your number: "))
                 if st_number <= 10:
                     print("Your number: " + str(st_number))
+                    my_number = st_number - 1
                     print("My number: " + str(my_number))
                 else: 
                     st_number > 10
@@ -115,6 +117,7 @@ else:
                     st_number: int = int(input("Your number needs to be within your odds, it can't be over odds or below 1. Try again, enter your number: "))
                     if st_number <= 10:
                         print("Your number: " + str(st_number))
+                        my_number = st_number - 1
                         print("My number: " + str(my_number))
                     else: 
                         st_number > 10
