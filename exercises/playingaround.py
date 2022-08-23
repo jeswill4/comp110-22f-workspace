@@ -1,4 +1,6 @@
-print("First day of coding set up was a struggle bus. Today was fun after getting help of folder set up.")
-print("Made my first hello world code after getting back from the help I received.")
-print("Learned about str, int, how to write \"\", bools, float, bits, objects, item, docstring, etc.")
-print("So I learned more in depth about binary and letters and numbers all have a specific type.")
+"""First day of coding set up was a struggle bus. Today was fun after getting help of folder set up."""
+"""Made my first hello world code after getting back from the help I received."""
+"""Learned about str, int, how to write \"\", bools, float, bits, objects, item, docstring, etc."""
+"""So I learned more in depth about binary and letters and numbers all have a specific type."""
+"""I now know how to make if else statements to create choices or forks in the code for different outcomes."""
+"""Also, I made chardle a terrible version of wordle for an assignment using if else conditions and variables."""
