@@ -38,7 +38,8 @@ if starting_it == str("okay"):
                     st_number > 10
                     print("My number: 4")
                     print("Your number: " + str(st_number))
-                    print("Well I can't play with you not following instructions.")            
+                    print("Well I can't play with you not following instructions.")  
+                    exit()          
         else:
             st_number > give_me_odds
             print("My number: 1")
@@ -74,6 +75,7 @@ if starting_it == str("okay"):
                     print("My number: 4")
                     print("Your number: " + str(st_number))
                     print("Well I can't play with you not following instructions.")
+                    exit()
         else:
             give_me_odds <= 2
             print("Wow, if you're going to be this stubborn, then I won't play. :( ")
@@ -119,6 +121,7 @@ else:
                         print("My number: 4")
                         print("Your number: " + str(st_number))
                         print("Well I can't play with you not following instructions.")
+                        exit()
             
             else:
                 give_me_odds <= 2
