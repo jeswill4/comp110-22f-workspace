@@ -25,7 +25,39 @@ if starting_it == str("okay"):
                 print("Your number: " + str(st_number))
                 my_number = st_number - 1
                 print("My number: " + str(my_number))
-
+                second_give: int = int(input("I win! You're really unlucky. Mabye your luck will change, we're going to find out. Odds out of 4. Enter number here: "))
+                if second_give <= 4:
+                    print("Your number: " + second_give)
+                    import random
+                    random_odd = [1,2,3,4]
+                    print("My number: " + random_odd)
+                    if random_odd != second_give:
+                        print("Nice you won one. It's been fun but I gotta go. I swear I'm not a sore loser. I would never :/")
+                    else:
+                        random_odd == second_give
+                        print("Wow, your luck is terrible. Welp, gotta go. It's been fun!")
+                else:
+                    second_give > 4
+                    print("My number: 4")
+                    print("Your number: " + str(second_give))
+                    print("Hey your'e not within our odds of 4.")
+                    second_give: int = int(input("Enter number here: "))
+                    if second_give <= 4: 
+                        print("Your number: " + second_give)
+                        import random
+                        random_odd = [1,2,3,4]
+                        print("My number: " + random_odd)
+                        if random_odd != second_give:
+                            print("Nice you won one. It's been fun but I gotta go. I swear I'm not a sore loser. I would never :/")
+                        else:
+                            random_odd == second_give
+                            print("Wow, your luck is terrible. Welp, gotta go. It's been fun!")
+                    else:
+                        second_give > 4
+                        print("My number: 4")
+                        print("Your number: " + str(second_give))
+                        print("Wow can't even play the game properly, no wonder your'e doing so bad.")
+                        exit()
 
 
 
@@ -40,7 +72,39 @@ if starting_it == str("okay"):
                     print("Your number: " + str(st_number))
                     my_number = st_number - 1
                     print("My number: " + str(my_number))
-
+                    second_give: int = int(input("I win! You're really unlucky. Mabye your luck will change, we're going to find out. Odds out of 4. Enter number here: "))
+                    if second_give <= 4:
+                        print("Your number: " + second_give)
+                        import random
+                        random_odd = [1,2,3,4]
+                        print("My number: " + random_odd)
+                        if random_odd != second_give:
+                            print("Nice you won one. It's been fun but I gotta go. I swear I'm not a sore loser. I would never :/")
+                        else:
+                            random_odd == second_give
+                            print("Wow, your luck is terrible. Welp, gotta go. It's been fun!")
+                    else:
+                        second_give > 4
+                        print("My number: 4")
+                        print("Your number: " + str(second_give))
+                        print("Hey your'e not within our odds of 4.")
+                        second_give: int = int(input("Enter number here: "))
+                        if second_give <= 4: 
+                            print("Your number: " + second_give)
+                            import random
+                            random_odd = [1,2,3,4]
+                            print("My number: " + random_odd)
+                            if random_odd != second_give:
+                                print("Nice you won one. It's been fun but I gotta go. I swear I'm not a sore loser. I would never :/")
+                            else:
+                                random_odd == second_give
+                                print("Wow, your luck is terrible. Welp, gotta go. It's been fun!")
+                        else:
+                            second_give > 4
+                            print("My number: 4")
+                            print("Your number: " + str(second_give))
+                            print("Wow can't even play the game properly, no wonder your'e doing so bad.")
+                            exit()
 
 
 
@@ -73,6 +137,39 @@ if starting_it == str("okay"):
                 print("Your number: " + str(st_number))
                 my_number = st_number - 1
                 print("My number: " + str(my_number))
+                second_give: int = int(input("I win! You're really unlucky. Mabye your luck will change, we're going to find out. Odds out of 4. Enter number here: "))
+                if second_give <= 4:
+                    print("Your number: " + second_give)
+                    import random
+                    random_odd = [1,2,3,4]
+                    print("My number: " + random_odd)
+                    if random_odd != second_give:
+                        print("Nice you won one. It's been fun but I gotta go. I swear I'm not a sore loser. I would never :/")
+                    else:
+                        random_odd == second_give
+                        print("Wow, your luck is terrible. Welp, gotta go. It's been fun!")
+                else:
+                    second_give > 4
+                    print("My number: 4")
+                    print("Your number: " + str(second_give))
+                    print("Hey your'e not within our odds of 4.")
+                    second_give: int = int(input("Enter number here: "))
+                    if second_give <= 4: 
+                        print("Your number: " + second_give)
+                        import random
+                        random_odd = [1,2,3,4]
+                        print("My number: " + random_odd)
+                        if random_odd != second_give:
+                            print("Nice you won one. It's been fun but I gotta go. I swear I'm not a sore loser. I would never :/")
+                        else:
+                            random_odd == second_give
+                            print("Wow, your luck is terrible. Welp, gotta go. It's been fun!")
+                    else:
+                        second_give > 4
+                        print("My number: 4")
+                        print("Your number: " + str(second_give))
+                        print("Wow can't even play the game properly, no wonder your'e doing so bad.")
+                        exit()
 
 
 
@@ -87,7 +184,39 @@ if starting_it == str("okay"):
                     print("Your number: " + str(st_number))
                     my_number = st_number - 1
                     print("My number: " + str(my_number))
-
+                    second_give: int = int(input("I win! You're really unlucky. Mabye your luck will change, we're going to find out. Odds out of 4. Enter number here: "))
+                    if second_give <= 4:
+                        print("Your number: " + second_give)
+                        import random
+                        random_odd = [1,2,3,4]
+                        print("My number: " + random_odd)
+                        if random_odd != second_give:
+                            print("Nice you won one. It's been fun but I gotta go. I swear I'm not a sore loser. I would never :/")
+                        else:
+                            random_odd == second_give
+                            print("Wow, your luck is terrible. Welp, gotta go. It's been fun!")
+                    else:
+                        second_give > 4
+                        print("My number: 4")
+                        print("Your number: " + str(second_give))
+                        print("Hey your'e not within our odds of 4.")
+                        second_give: int = int(input("Enter number here: "))
+                        if second_give <= 4: 
+                            print("Your number: " + second_give)
+                            import random
+                            random_odd = [1,2,3,4]
+                            print("My number: " + random_odd)
+                            if random_odd != second_give:
+                                print("Nice you won one. It's been fun but I gotta go. I swear I'm not a sore loser. I would never :/")
+                            else:
+                                random_odd == second_give
+                                print("Wow, your luck is terrible. Welp, gotta go. It's been fun!")
+                        else:
+                            second_give > 4
+                            print("My number: 4")
+                            print("Your number: " + str(second_give))
+                            print("Wow can't even play the game properly, no wonder your'e doing so bad.")
+                            exit()
 
 
 
@@ -130,7 +259,39 @@ else:
                         print("Your number: " + str(st_number))
                         my_number = st_number - 1
                         print("My number: " + str(my_number))
-
+                        second_give: int = int(input("I win! You're really unlucky. Mabye your luck will change, we're going to find out. Odds out of 4. Enter number here: "))
+                        if second_give <= 4:
+                            print("Your number: " + second_give)
+                            import random
+                            random_odd = [1,2,3,4]
+                            print("My number: " + random_odd)
+                            if random_odd != second_give:
+                                print("Nice you won one. It's been fun but I gotta go. I swear I'm not a sore loser. I would never :/")
+                            else:
+                                random_odd == second_give
+                                print("Wow, your luck is terrible. Welp, gotta go. It's been fun!")
+                        else:
+                            second_give > 4
+                            print("My number: 4")
+                            print("Your number: " + str(second_give))
+                            print("Hey your'e not within our odds of 4.")
+                            second_give: int = int(input("Enter number here: "))
+                            if second_give <= 4: 
+                                print("Your number: " + second_give)
+                                import random
+                                random_odd = [1,2,3,4]
+                                print("My number: " + random_odd)
+                                if random_odd != second_give:
+                                    print("Nice you won one. It's been fun but I gotta go. I swear I'm not a sore loser. I would never :/")
+                                else:
+                                    random_odd == second_give
+                                    print("Wow, your luck is terrible. Welp, gotta go. It's been fun!")
+                            else:
+                                second_give > 4
+                                print("My number: 4")
+                                print("Your number: " + str(second_give))
+                                print("Wow can't even play the game properly, no wonder your'e doing so bad.")
+                                exit()
 
 
 
@@ -144,7 +305,39 @@ else:
                             print("Your number: " + str(st_number))
                             my_number = st_number - 1
                             print("My number: " + str(my_number))
-
+                            second_give: int = int(input("I win! You're really unlucky. Mabye your luck will change, we're going to find out. Odds out of 4. Enter number here: "))
+                            if second_give <= 4:
+                                print("Your number: " + second_give)
+                                import random
+                                random_odd = [1,2,3,4]
+                                print("My number: " + random_odd)
+                                if random_odd != second_give:
+                                    print("Nice you won one. It's been fun but I gotta go. I swear I'm not a sore loser. I would never :/")
+                                else:
+                                    random_odd == second_give
+                                    print("Wow, your luck is terrible. Welp, gotta go. It's been fun!")
+                            else:
+                                second_give > 4
+                                print("My number: 4")
+                                print("Your number: " + str(second_give))
+                                print("Hey your'e not within our odds of 4.")
+                                second_give: int = int(input("Enter number here: "))
+                                if second_give <= 4: 
+                                    print("Your number: " + second_give)
+                                    import random
+                                    random_odd = [1,2,3,4]
+                                    print("My number: " + random_odd)
+                                    if random_odd != second_give:
+                                        print("Nice you won one. It's been fun but I gotta go. I swear I'm not a sore loser. I would never :/")
+                                    else:
+                                        random_odd == second_give
+                                        print("Wow, your luck is terrible. Welp, gotta go. It's been fun!")
+                                else:
+                                    second_give > 4
+                                    print("My number: 4")
+                                    print("Your number: " + str(second_give))
+                                    print("Wow can't even play the game properly, no wonder your'e doing so bad.")
+                                    exit()
 
 
 
@@ -169,7 +362,39 @@ else:
                     print("Your number: " + str(st_number))
                     my_number = st_number - 1
                     print("My number: " + str(my_number))
-
+                    second_give: int = int(input("I win! You're really unlucky. Mabye your luck will change, we're going to find out. Odds out of 4. Enter number here: "))
+                    if second_give <= 4:
+                        print("Your number: " + second_give)
+                        import random
+                        random_odd = [1,2,3,4]
+                        print("My number: " + random_odd)
+                        if random_odd != second_give:
+                            print("Nice you won one. It's been fun but I gotta go. I swear I'm not a sore loser. I would never :/")
+                        else:
+                            random_odd == second_give
+                            print("Wow, your luck is terrible. Welp, gotta go. It's been fun!")
+                    else:
+                        second_give > 4
+                        print("My number: 4")
+                        print("Your number: " + str(second_give))
+                        print("Hey your'e not within our odds of 4.")
+                        second_give: int = int(input("Enter number here: "))
+                        if second_give <= 4: 
+                            print("Your number: " + second_give)
+                            import random
+                            random_odd = [1,2,3,4]
+                            print("My number: " + random_odd)
+                            if random_odd != second_give:
+                                print("Nice you won one. It's been fun but I gotta go. I swear I'm not a sore loser. I would never :/")
+                            else:
+                                random_odd == second_give
+                                print("Wow, your luck is terrible. Welp, gotta go. It's been fun!")
+                        else:
+                            second_give > 4
+                            print("My number: 4")
+                            print("Your number: " + str(second_give))
+                            print("Wow can't even play the game properly, no wonder your'e doing so bad.")
+                            exit()
 
 
 
@@ -183,7 +408,39 @@ else:
                         print("Your number: " + str(st_number))
                         my_number = st_number - 1
                         print("My number: " + str(my_number))
-
+                        second_give: int = int(input("I win! You're really unlucky. Mabye your luck will change, we're going to find out. Odds out of 4. Enter number here: "))
+                        if second_give <= 4:
+                            print("Your number: " + second_give)
+                            import random
+                            random_odd = [1,2,3,4]
+                            print("My number: " + random_odd)
+                            if random_odd != second_give:
+                                print("Nice you won one. It's been fun but I gotta go. I swear I'm not a sore loser. I would never :/")
+                            else:
+                                random_odd == second_give
+                                print("Wow, your luck is terrible. Welp, gotta go. It's been fun!")
+                        else:
+                            second_give > 4
+                            print("My number: 4")
+                            print("Your number: " + str(second_give))
+                            print("Hey your'e not within our odds of 4.")
+                            second_give: int = int(input("Enter number here: "))
+                            if second_give <= 4: 
+                                print("Your number: " + second_give)
+                                import random
+                                random_odd = [1,2,3,4]
+                                print("My number: " + random_odd)
+                                if random_odd != second_give:
+                                    print("Nice you won one. It's been fun but I gotta go. I swear I'm not a sore loser. I would never :/")
+                                else:
+                                    random_odd == second_give
+                                    print("Wow, your luck is terrible. Welp, gotta go. It's been fun!")
+                            else:
+                                second_give > 4
+                                print("My number: 4")
+                                print("Your number: " + str(second_give))
+                                print("Wow can't even play the game properly, no wonder your'e doing so bad.")
+                                exit()
 
 
 
@@ -210,7 +467,8 @@ else:
 second_give: int = int(input("I win! You're really unlucky. Mabye your luck will change, we're going to find out. Odds out of 4. Enter number here: "))
 if second_give <= 4:
     print("Your number: " + second_give)
-    random_odd: int = int(randint(1,4))
+    import random
+    random_odd = [1,2,3,4]
     print("My number: " + random_odd)
     if random_odd != second_give:
         print("Nice you won one. It's been fun but I gotta go. I swear I'm not a sore loser. I would never :/")
@@ -225,7 +483,8 @@ else:
     second_give: int = int(input("Enter number here: "))
     if second_give <= 4: 
         print("Your number: " + second_give)
-        random_odd: int = int(randint(1,4))
+        import random
+        random_odd = [1,2,3,4]
         print("My number: " + random_odd)
         if random_odd != second_give:
             print("Nice you won one. It's been fun but I gotta go. I swear I'm not a sore loser. I would never :/")
