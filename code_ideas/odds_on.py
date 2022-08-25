@@ -366,7 +366,7 @@ else:
                         exit()
             else:
                 st_number > give_me_odds
-                give_me_odds: int = int(input("You need to say a number from 1-odds, you went over. Try again. Odds? "))
+                st_number: int = int(input("You need to say a number from 1-odds, you went over. Try again, enter here: "))
                 if st_number <= give_me_odds:
                     st_number: int = int(input("Ok now that we have odds, type your number and when you hit enter I will type mine. Enter number: "))
                     print("Your number: " + str(st_number))
