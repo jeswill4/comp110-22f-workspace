@@ -8,15 +8,15 @@ WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
 
+while len(wordle_guess) < len(wordle_secret) or len(wordle_guess) > len(wordle_secret): 
+    wordle_guess: str = input ("That is not 6 letters! Try again: ")
+
 def l(a: str, b: int) -> str:
     if a[b] == wordle_secret[b]:
         return GREEN_BOX
     else: 
         return WHITE_BOX
 print(l(wordle_guess, 0) + l(wordle_guess, 1) + l(wordle_guess, 2) + l(wordle_guess, 3) + l(wordle_guess, 4) + l(wordle_guess, 5))
-"""Testing for correct amount of letters in guess to amount of letters in correct wordle."""
-while len(wordle_guess) < len(wordle_secret) or len(wordle_guess) > len(wordle_secret): 
-    wordle_guess: str = input ("That is not 6 letters! Try again: ")
 while len(wordle_guess) == len(wordle_secret):
     if wordle_guess == wordle_secret:
         print("Woo! You got it!")
