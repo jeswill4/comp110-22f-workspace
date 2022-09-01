@@ -11,6 +11,7 @@ GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
 
 def l(b: int) -> str:
+    """To insert colors for wordle letters, green is correct letter correct place, yellow is correct letter wrong place, and white is incorrect letter."""
     if b < number_of_letters:
         if wordle_guess[b] == wordle_secret[b]:
             return GREEN_BOX
@@ -18,7 +19,8 @@ def l(b: int) -> str:
             return WHITE_BOX 
     else: 
         return ""
-
+        
+"""Place holder for wordle color boxes"""
 holder: str = l(0) + l(1) + l(2) + l(3) + l(4) + l(5) + l(6) + l(7) + l(8) + l(9) + l(10) + l(11) + l(12) + l(13) + l(14) + l(15)
 print(holder)
 
