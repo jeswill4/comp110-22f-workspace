@@ -1,12 +1,11 @@
-"""EX02 - One shot wordle - get one guess to guess secret word python. Exercise 2. """
-
-__author__: str = "730561311"
+"""One shot wordle, get one guess to guess secret word python."""
+__author__ = "730561311"
 
 """Most of my variable are in this section. Also input for wordle guess, and a check to make sure its the same amount of letters."""
 wordle_secret: str = "python"
 number_of_letters: int = len(wordle_secret)
 wordle_guess: str = input(f"What is your { number_of_letters }-letter guess? ")
-while len(wordle_guess) < number_of_letters or len(wordle_guess) > number_of_letters: 
+while len(wordle_guess) < len(wordle_secret) or len(wordle_guess) > len(wordle_secret): 
     wordle_guess: str = input (f"That is not { number_of_letters } letters! Try again: ")
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
@@ -32,7 +31,7 @@ while i < number_of_letters:
             holder_emoji = holder_emoji + YELLOW_BOX
     i = i + 1
 
-"""Big-magic of printing out the emojis we stored for each letter."""
+"""Big magic of printing out the emojis we stored for each letter."""
 if i == number_of_letters:
     print(holder_emoji)
 """Finishing touch to tell the player they either guessed the word correctly or not."""
