@@ -23,7 +23,7 @@ while i < number_of_letters:
         alternatives: int = 0 
         while never_in == False and alternatives < number_of_letters:
             if wordle_guess[i] == wordle_secret[alternatives]:
-                never_in == True
+                never_in: bool = True
             else:
                 alternatives = alternatives + 1
         if never_in == False:
