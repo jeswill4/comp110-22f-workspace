@@ -31,7 +31,7 @@ while i < number_of_letters:
             holder_emoji = holder_emoji + YELLOW_BOX
     i = i + 1
 
-"""Big magic of printing out the emojis we stored for each letter."""
+"""Big-magic of printing out the emojis we stored for each letter."""
 if i == number_of_letters:
     print(holder_emoji)
 """Finishing touch to tell the player they either guessed the word correctly or not."""
