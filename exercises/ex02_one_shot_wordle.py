@@ -35,10 +35,7 @@ while i < number_of_letters:
 if i == number_of_letters:
     print(holder_emoji)
 """Finishing touch to tell the player they either guessed the word correctly or not."""
-while len(wordle_guess) == len(wordle_secret):
-    if wordle_guess == wordle_secret:
-        print("Woo! You got it!")
-        exit()
-    else:
-        print("Not quite. Play again soon!")
-        exit()
+if wordle_guess == wordle_secret:
+    print("Woo! You got it!")
+else:
+    print("Not quite. Play again soon!")
