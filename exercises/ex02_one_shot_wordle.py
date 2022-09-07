@@ -18,7 +18,17 @@ while i < number_of_letters:
     if wordle_guess[i] == wordle_secret[i]:
         holder_emoji = holder_emoji + GREEN_BOX
     if wordle_guess[i] != wordle_secret[i]:
-        holder_emoji = holder_emoji + WHITE_BOX
+        never_in: bool = False
+        alternatives: int = 0 
+        while never_in == False and alternatives < number_of_letters:
+            if wordle_guess[i] == wordle_secret[alternatives]:
+                never_in: bool = True
+            else:
+                alternatives = alternatives + 1
+        if never_in == False:
+            holder_emoji = holder_emoji + WHITE_BOX
+        else:
+            holder_emoji = holder_emoji + YELLOW_BOX
     i = i + 1
 
 """Big magic of printing out the emojis we stored for each letter."""
