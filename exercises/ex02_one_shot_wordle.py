@@ -1,4 +1,5 @@
-"""One shot wordle, get one guess to guess secret word python."""
+"""EX02 - One shot wordle - get one guess to guess secret word python. Exercise 2. """
+
 __author__ = "730561311"
 
 """Most of my variable are in this section. Also input for wordle guess, and a check to make sure its the same amount of letters."""
