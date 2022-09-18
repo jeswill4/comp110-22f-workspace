@@ -18,7 +18,7 @@ def max(input: list[int]) -> int:
     """Function max returns largest integar in list. If empty return Value Error."""
     if len(input) == 0:
         raise ValueError("max() arg is an empty List")
-    maximum_num: int = 0
+    maximum_num == input[0]
     i: int = 0
     while i < len(input):
         if input[i] > maximum_num:
