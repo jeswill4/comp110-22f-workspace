@@ -5,7 +5,9 @@ __author__ = "730561311"
 def all(listy: list[int], searchy: int) -> bool:
     """Function all used to search number and check to see if list contains only that number. True/False."""
     i: int = 0 
-    while i < len(listy) and len(listy) > 0:
+    if len(listy) == 0:
+        return False
+    while i < len(listy):
         if listy[i] != searchy:
             return False
         i += 1
