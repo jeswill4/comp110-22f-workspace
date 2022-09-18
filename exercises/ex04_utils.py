@@ -37,4 +37,4 @@ def is_equal(listy: list[int], input: list[int]) -> bool:
             if listy[i] != input[i]:
                 return False
             i += 1
-        return True
+    return True
