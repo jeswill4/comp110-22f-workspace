@@ -22,7 +22,7 @@ def max(input: list[int]) -> int:
     i: int = 0
     while i < len(input):
         if input[i] > maximum_num:
-            maximum_num: input[i]
+            maximum_num: int = input[i]
         i += 1
     return maximum_num
 
