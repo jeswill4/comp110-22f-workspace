@@ -22,24 +22,41 @@ def numtostr(machine: int) -> str:
     if machine == 2:
         return picks[2]
 
-def winner(urnum: int, compnumb: int) -> str:
+def winner(urnum: int, compnumb: int) -> int:
     print(f"MACHINE SHOOTS {numtostr(compnumb)}! <--> {username} SHOOTS {numtostr(urnum)}!")
-    computernumber: int = compnumb
-    while picked == computernumber:
+    while urnum == compnumb:
         print("AGAIN")
-        picked(input("Thinking of ROCK or PAPER or SCISSORS: "))
-        computernumber: int = randint(0,2)
-        print(f"MACHINE SHOOTS {numtostr(computernumber)}! <--> {username} SHOOTS {numtostr(picked)}!")
+        urnum: int = picked(input("Thinking of ROCK or PAPER or SCISSORS: ")) 
+        compnumb: int = randint(0,2)
+        print(f"MACHINE SHOOTS {numtostr(compnumb)}! <--> {username} SHOOTS {numtostr(urnum)}!")
 
-    if (picked == 0 and computernumber == 2) or (picked == 1 and computernumber == 0) or (picked == 2 and computernumber == 1):
+    if (urnum == 0 and compnumb == 2) or (urnum == 1 and compnumb == 0) or (urnum == 2 and compnumb == 1):
         print(f"{username} WON!!!! ")
+        return 0
     else:
         print(f"MACHINE WON!!!!")
+        return 1
     
-
-picked(input("What are you thinking? ROCK, PAPER, or SCISSORS? Type exactly the same way, all capatilized letters: "))
+rpspick: int = picked(input("What are you thinking? ROCK, PAPER, or SCISSORS? Type exactly the same way, all capatilized letters: "))
 from random import randint
 computernumber: int = randint(0, 2)
-winner(picked, computernumber)
+winner(rpspick, computernumber)
+
+if input(f"{username} do you want to play a best out of 3? YES or NO: ") == "YES":
+    machinewins: int = 0
+    playerwins: int = 0
+    while machinewins < 2 or playerwins < 2:
+        rpspick: int = picked(input("Thinking of ROCK or PAPER or SCISSORS: "))
+        computernumber: int = randint(0, 2)
+        if winner(rpspick, computernumber) == 0:
+            playerwins += 1
+        else: 
+            machinewins += 1
+    if machinewins == 2:
+        print(f"Nice try {username}, but you lost to MACHINE.")
+    if playerwins == 2:
+        print(f"{username} you're to good!")
+
+
 
     
