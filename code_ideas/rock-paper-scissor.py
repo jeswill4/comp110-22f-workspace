@@ -44,12 +44,11 @@ from random import randint
 computernumber: int = randint(0, 2)
 winner(rpspick, computernumber)
 
-if input(f"{username} do you want to play a best out of _? YES or NO: ") == "YES":
-    gamesnum: int = input("Best out of what? Enter an odd number: ")
-    needed_to_win: int = ((gamesnum // 2) + (gamesnum % 2))
+if input(f"{username} do you want to play a best out of 3? YES or NO: ") == "YES":
+    needed_to_win: int = 2
     machinewins: int = 0
     playerwins: int = 0
-    while needed_to_win > playerwins or needed_to_win > machinewins:
+    while needed_to_win > playerwins and needed_to_win > machinewins:
         rpspick: int = picked(input("Thinking of ROCK or PAPER or SCISSORS: "))
         computernumber: int = randint(0, 2)
         if winner(rpspick, computernumber) == 0:
