@@ -64,8 +64,12 @@ if input(f"{username} do you want to play a best out of 3? YES or NO: ") == "YES
     upto(2)
     if input("Do you want to play a best out of 7? YES or NO: ") == "YES":
         upto(4)
+        print("Thanks for playing!")
+    else:
+        print("Thanks for playing!")
 else:
     print("Thanks for playing!")
+
 
 
     
