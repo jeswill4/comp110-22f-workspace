@@ -38,17 +38,11 @@ def winner(urnum: int, compnumb: int) -> int:
         print(f"MACHINE WON!!!!")
         print("")
         return 1
-    
-rpspick: int = picked(input("What are you thinking? ROCK, PAPER, or SCISSORS? Type exactly the same way, all capatilized letters: "))
-from random import randint
-computernumber: int = randint(0, 2)
-winner(rpspick, computernumber)
 
-if input(f"{username} do you want to play a best out of 3? YES or NO: ") == "YES":
-    needed_to_win: int = 2
+def upto(neededtowin: int) -> int:
     machinewins: int = 0
     playerwins: int = 0
-    while needed_to_win > playerwins and needed_to_win > machinewins:
+    while neededtowin > playerwins and neededtowin > machinewins:
         rpspick: int = picked(input("Thinking of ROCK or PAPER or SCISSORS: "))
         computernumber: int = randint(0, 2)
         if winner(rpspick, computernumber) == 0:
@@ -57,8 +51,19 @@ if input(f"{username} do you want to play a best out of 3? YES or NO: ") == "YES
             machinewins += 1
     if machinewins == 2:
         print(f"Nice try {username}, but you lost to MACHINE.")
+        return 1
     if playerwins == 2:
-        print(f"{username} you're to good!\nThanks for playing!")
+        print(f"{username} you're to good!")
+        return 0
+rpspick: int = picked(input("What are you thinking? ROCK, PAPER, or SCISSORS? Type exactly the same way, all capatilized letters: "))
+from random import randint
+computernumber: int = randint(0, 2)
+winner(rpspick, computernumber)
+
+if input(f"{username} do you want to play a best out of 3? YES or NO: ") == "YES":
+    upto(2)
+    if input("Do you want to play a best out of 7? YES or NO: ") == "YES":
+        upto(4)
 else:
     print("Thanks for playing!")
 
