@@ -5,7 +5,7 @@ def only_evens(wholelist: list[int]) -> list[int]:
     """Takes a list of numbers and outputs a newlist of any even numbers from that list."""
     i: int = 0
     while i < len(wholelist):
-        if wholelist[i] == 2:
+        if (wholelist[i]%2) == 0:
             newlist: list[int] = list()
             newlist.append(wholelist[i])
         i += 1
