@@ -49,10 +49,10 @@ def upto(neededtowin: int) -> int:
             playerwins += 1
         else: 
             machinewins += 1
-    if machinewins == 2:
+    if machinewins == neededtowin:
         print(f"Nice try {username}, but you lost to MACHINE.")
         return 1
-    if playerwins == 2:
+    if playerwins == neededtowin:
         print(f"{username} you're to good!")
         return 0
 rpspick: int = picked(input("What are you thinking? ROCK, PAPER, or SCISSORS? Type exactly the same way, all capatilized letters: "))
