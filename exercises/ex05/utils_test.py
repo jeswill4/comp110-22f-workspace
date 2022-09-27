@@ -15,8 +15,8 @@ def test_if_startnumber_is_negative_one() -> None:
     assert sub([8, 42, 4, 10], -1, 3)
 
 
-def test_concat_list_with_list() -> None:
+def test_concat_emptylist() -> None:
     """Testing to combine two lists together."""
-    unolist: list[int] = [4, 7]
-    doslist: list[int] = [10, 18]
+    unolist: list[int] = []
+    doslist: list[int] = []
     assert concat(unolist, doslist)
