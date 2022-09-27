@@ -19,8 +19,6 @@ def concat(firstlist: list[int], secondlist: list[int]) -> list[int]:
     completelist: list[int] = list()
     completelist.append(firstlist)
     completelist.append(secondlist)
-    assert firstlist <= completelist
-    assert secondlist <= completelist
     assert firstlist + secondlist == completelist
     return completelist
 
@@ -31,7 +29,6 @@ def sub(finallist: list[int], startnum: int, endnum: int) -> list[int]:
     if len(finallist) == 0 or startnum > len(finallist) or endnum <= 0:
         return finallylist
     finallylist.append(finallist)
-    assert finallist == finallylist
     if startnum > -1:
         i: int = 0
         while i < startnum:
