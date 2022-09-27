@@ -18,9 +18,9 @@ def concat(firstlist: list[int], secondlist: list[int]) -> list[int]:
     """Given two list this concat function combines them."""
     completelist: list[int] = list()
     completelist.append(firstlist)
-    assert firstlist == completelist
+    assert len(completelist) == len(firstlist)
     completelist.append(secondlist)
-    assert (secondlist + firstlist) == completelist
+    assert (len(firstlist) + len(secondlist)) == len(completelist)
     return completelist
 
 
@@ -37,7 +37,7 @@ def sub(finallist: list[int], startnum: int, endnum: int) -> list[int]:
             i += 1
     if endnum < len(finallist):
         i: int = endnum
-        while i < len(finallist - 1):
+        while i < (len(finallist) - 1):
             finallylist.pop(endnum)
             i += 1
     return finallylist
