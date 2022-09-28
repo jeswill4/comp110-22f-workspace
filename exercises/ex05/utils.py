@@ -28,7 +28,7 @@ def sub(finallist: list[int], startnum: int, endnum: int) -> list[int]:
     finallylist: list[int] = list()
     if len(finallist) == 0:
         return finallylist
-    if startnum >= (len(finallist) -1):
+    if startnum >= (len(finallist) - 1):
         return finallylist
     if endnum <= 0:
         return finallylist
