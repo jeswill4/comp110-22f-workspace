@@ -13,7 +13,7 @@ def test_list_output_even() -> None:
 def test_if_startnumber_and_endnumber_is_different_than_list() -> None:
     """Testin sub to see if it creates a new list from given, that starts and ends with given numbers."""
     assert sub([1, 2, 5], 0, 0)
-    assert sub([4, 6, 7, 8], -1, 6)
+    assert sub([4, 6, 7, 8], -1, 6) 
     assert sub([8, 42, 4, 10], 1, 3)
 
 
