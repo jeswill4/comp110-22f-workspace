@@ -45,6 +45,6 @@ def sub(finallist: list[int], startnum: int, endnum: int) -> list[int]:
     if endnum > 0:
         i: int = endnum
         while i < (len(finallist) - 1):
-            finallylist.pop(endnum)
+            finallylist.pop(i - startnum)
             i += 1
     return finallylist
