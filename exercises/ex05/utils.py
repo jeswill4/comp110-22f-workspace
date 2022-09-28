@@ -26,6 +26,12 @@ def concat(firstlist: list[int], secondlist: list[int]) -> list[int]:
 def sub(finallist: list[int], startnum: int, endnum: int) -> list[int]:
     """Generates new list that doesn't have numbers before start and numbers after end."""
     finallylist: list[int] = list()
+    if len(finallist) == 0:
+        return finallylist
+    if startnum >= (len(finallist) -1):
+        return finallylist
+    if endnum <= 0:
+        return finallylist
     finallylist.append(finallist)
     if startnum >= 0:
         i: int = 0
