@@ -32,6 +32,8 @@ def sub(finallist: list[int], startnum: int, endnum: int) -> list[int]:
         return finallylist
     if endnum <= 0:
         return finallylist
+    if endnum > (len(finallist) - 1):
+        return finallylist
     finallylist.append(finallist)
     if startnum >= 0:
         i: int = 0
