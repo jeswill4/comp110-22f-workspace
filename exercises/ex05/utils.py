@@ -17,11 +17,15 @@ def concat(firstlist: list[int], secondlist: list[int]) -> list[int]:
     """Given two list this concat function combines them."""
     completelist: list[int] = list()
     if len(firstlist) > 0:
-        for index in firstlist:
-            completelist.append(firstlist[index])
+        i: int = 0
+        while i < (len(firstlist) - 1):
+            completelist.append(firstlist[i])
+            i += 1
     if len(secondlist) > 0:
-        for index in secondlist:
-            completelist.append(secondlist[index])
+        i: int = 0
+        while i < (len(firstlist) - 1):
+            completelist.append(firstlist[i])
+            i += 1
     return completelist
 
 
@@ -38,8 +42,10 @@ def sub(finallist: list[int], startnum: int, endnum: int) -> list[int]:
         return finallylist
     if endnum > (len(finallist) - 1):
         return finallylist
-    for index in finallist:
-        finallylist.append(finallist[index])
+    i: int = 0
+    while i < finallist:
+        finallylist.append(finallist[i])
+        i += 1
     if startnum >= 0:
         i: int = 0
         while i < startnum:
