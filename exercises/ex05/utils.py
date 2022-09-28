@@ -20,14 +20,19 @@ def concat(firstlist: list[int], secondlist: list[int]) -> list[int]:
     assert len(completelist) == 0 
     completelist.append(firstlist)
     completelist.append(secondlist)
-    assert len(completelist) == (len(firstlist) + len(secondlist))
     return completelist
 
 
 def sub(finallist: list[int], startnum: int, endnum: int) -> list[int]:
     """Generates new list that doesn't have numbers before start and numbers after end."""
     finallylist: list[int] = list()
-    if len(finallist) == 0 or startnum >= len(finallist) or endnum <= 0:
+    if len(finallist) == 0:
+        assert len(finallylist) == 0
+        return finallylist
+    if startnum >= len(finallist):
+        assert len(finallylist) == 0
+        return finallylist
+    if endnum <= 0:
         assert len(finallylist) == 0
         return finallylist
     finallylist.append(finallist)

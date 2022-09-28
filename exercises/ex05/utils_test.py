@@ -10,9 +10,9 @@ def test_list_output_even() -> None:
     assert only_evens(mylistex)
 
 
-def test_if_startnumber_is_negative_one() -> None:
+def test_if_startnumber_is_one() -> None:
     """Testin sub to see if it creates a new list from given, that starts and ends with given numbers."""
-    assert sub([8, 42, 4, 10], -1, 3)
+    assert sub([8, 42, 4, 10], 1, 3)
 
 
 def test_concat_emptylist() -> None:
