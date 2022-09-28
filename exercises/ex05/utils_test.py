@@ -10,15 +10,13 @@ def test_list_output_even() -> None:
     assert only_evens(mylistex)
 
 
-def test_concat_emptylist_and_more() -> None:
-    """Testing to combine two lists together."""
-    unolist: list[int] = []
-    doslist: list[int] = []
-    assert concat(unolist, doslist)
-
-
 def test_if_startnumber_1() -> None:
     """Testing sub to see if it creates a new list from given, that starts and ends with given numbers."""
     assert sub([1, 2, 3], 1, 2)
 
 
+def test_concat_emptylist_and_more() -> None:
+    """Testing to combine two lists together."""
+    unolist: list[int] = []
+    doslist: list[int] = []
+    assert concat(unolist, doslist)
