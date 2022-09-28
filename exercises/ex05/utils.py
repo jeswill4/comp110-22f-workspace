@@ -29,7 +29,6 @@ def sub(finallist: list[int], startnum: int, endnum: int) -> list[int]:
     finallylist: list[int] = list()
     assert len(finallylist) == 0
     finallylist.append(finallist)
-    assert finallylist == finallist
     if startnum >= 0:
         i: int = 0
         while i < startnum:
