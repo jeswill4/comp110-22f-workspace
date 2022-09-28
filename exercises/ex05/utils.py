@@ -16,8 +16,10 @@ def only_evens(wholelist: list[int]) -> list[int]:
 def concat(firstlist: list[int], secondlist: list[int]) -> list[int]:
     """Given two list this concat function combines them."""
     completelist: list[int] = list()
-    completelist.append(firstlist)
-    completelist.append(secondlist)
+    if len(firstlist) > 0:
+        completelist.append(firstlist)
+    if len(secondlist) > 0:
+        completelist.append(secondlist)
     return completelist
 
 
