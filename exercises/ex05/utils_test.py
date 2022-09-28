@@ -10,13 +10,27 @@ def test_list_output_even() -> None:
     assert only_evens(mylistex)
 
 
-def test_if_startnumber_is_one() -> None:
+def test_if_startnumber_and_endnumber_is_different_than_list() -> None:
     """Testin sub to see if it creates a new list from given, that starts and ends with given numbers."""
+    assert sub([1, 2, 5], 0, 0)
+    assert sub([4, 6, 7, 8], -1, 6)
     assert sub([8, 42, 4, 10], 1, 3)
 
 
-def test_concat_emptylist() -> None:
+def test_concat_emptylist_and_more() -> None:
     """Testing to combine two lists together."""
     unolist: list[int] = []
     doslist: list[int] = []
     assert concat(unolist, doslist)
+    firstlist: list[int] = [1]
+    secondlist: list[int] = [2]
+    assert concat(firstlist, secondlist)
+    onelist: list[int] = []
+    twolist: list[int] = [1, 2]
+    assert concat(onelist, twolist)
+    listlist: list[int] = [1, 2]
+    listylisty: list[int] = []
+    assert concat(listlist, listylisty)
+    unique: list[int] = [1, 5, 6]
+    numberlist: list[int] = [2]
+    assert concat(unique, numberlist)
