@@ -43,7 +43,7 @@ def sub(finallist: list[int], startnum: int, endnum: int) -> list[int]:
     if endnum > (len(finallist) - 1):
         return finallylist
     i: int = 0
-    while i < len(finallist - 1):
+    while i < (len(finallist) - 1):
         finallylist.append(finallist[i])
         i += 1
     if startnum >= 0:
