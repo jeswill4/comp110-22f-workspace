@@ -17,9 +17,10 @@ def only_evens(wholelist: list[int]) -> list[int]:
 def concat(firstlist: list[int], secondlist: list[int]) -> list[int]:
     """Given two list this concat function combines them."""
     completelist: list[int] = list()
+    assert firstlist and secondlist >= completelist
     completelist.append(firstlist)
     completelist.append(secondlist)
-    assert completelist == firstlist + secondlist
+    assert len(completelist) == len(firstlist) + len(secondlist)
     return completelist
 
 
@@ -35,11 +36,11 @@ def sub(finallist: list[int], startnum: int, endnum: int) -> list[int]:
         while i < startnum:
             finallylist.pop(i)
             i += 1
-        assert finallylist == len(finallist) - i
+        assert len(finallylist) == len(finallist) - i
     if endnum < len(finallist):
         i: int = endnum
         while i < (len(finallist) - 1):
             finallylist.pop(endnum)
             i += 1
-        assert len(finallylist) == (endnum - startnum)
+        assert len(finallylist) == abs(endnum - startnum)
     return finallylist
