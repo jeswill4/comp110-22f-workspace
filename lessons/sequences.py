@@ -36,4 +36,13 @@ zero_start: range = range(10)
 for x in zero_start:
     print("simple:", x)
 
+names: list[str] = ["Albert", "Jesse", "DJ", "Micheal", "Ruben", "Maricus", "Justin", "Nick", "Joshua"]
+for name in names:
+    print(name)
+
+# Range is often used to write for loops where
+# your iteration pattern is not consexutive
+for i in range(0, len(names), 2):
+    print(names[i])
+
 
