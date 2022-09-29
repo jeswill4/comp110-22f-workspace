@@ -11,4 +11,13 @@ print(start_position)
 # can't change individual items in it, not like a list that can be popped or appended
 start_position = (start_position[0] + 5.0, start_position[1] + 10.0)
 print(start_position)
+end_position: Point2D = (99.0, 99.0)
+
+# tupels, because they are a sequence, are 0-indexed)
+print(start_position[0])
+
+for item in end_position:
+    print(item)
+
+print(len(end_position))
 
