@@ -78,16 +78,19 @@ def upto(neededtowin: int) -> int:
 
 
 def best_of_one() -> None:
+    """Second path. One game of rock paper scissor."""
     rpspick: int = picked(input("What are you thinking? ROCK, PAPER, or SCISSOR? "))
     computernumber: int = randint(0, 2)
     winner(rpspick, computernumber)
 
 
 def best_of_three() -> None:
+    """Third path. Best out of 3 games of rock paper scissor."""
     upto(2)
 
 
 def best_of_seven() -> None:
+    """Fourth path. Best out of 7 games of rock paper scissor."""
     upto(4)
 
 
