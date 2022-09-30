@@ -20,14 +20,16 @@ def picked(user: str) -> int:
     picks: list[str] = ["ROCK", "PAPER", "SCISSOR"]
     if user == picks[0]:
         return 0
-    if user == picks[1]:
+    elif user == picks[1]:
         return 1
-    if user == picks[2]:
+    elif user == picks[2]:
         return 2
+    else: 
+        return 3
 
 
 def numtostr(machine: int) -> str:
-    """Converts machines random 3 numbers into correspoding rock, paper, scissor emojies."""
+    """Converts 3 numbers into correspoding rock, paper, scissor emojies."""
     ROCK =  str = "\U0000270A"
     PAPER = str = "\U0000270B"
     SCISSOR = str = "\U0000270C"
@@ -37,6 +39,8 @@ def numtostr(machine: int) -> str:
         return PAPER
     if machine == 2:
         return SCISSOR
+    if machine == 3:
+        return "nothing"
 
 
 def winner(urnum: int, compnumb: int) -> int:
@@ -165,13 +169,13 @@ def winner_award() -> bool:
 
 def achievement_tracked() -> None:
     global player
-    if tie_award() == True:
+    if tie_award() is True:
         print("\nACHIEVEMENT - MIND READER\nTie +3 times or more in row and win")
-    if tie_award_two() == True:
+    if tie_award_two() is True:
         print("\nACHIEVEMENT - MACHINE INTERPRETER\n Tie +7 times or more in row and win")
-    if loser_award() == True:
+    if loser_award() is True:
         print("\nACHIEVEMENT - MACHINE DOMINATION\n Lose +5 times or more in a row")
-    if winner_award() == True:
+    if winner_award() is True:
         print(f"\nACHIEVEMENT - {player} DOMINATION\n Win +5 times or more in a row")
 
 
@@ -187,8 +191,8 @@ def main() -> None:
         if pathways == "7":
             best_of_seven()
         pathways: int = input("Enter \"0\" for STOP, \"1\" for one game, \"3\" for best of 3, or \"7\" for best of 7: ")
-    achievement_tracked()
     print(f"Your total points: {points}\nWins/total games - {total_wins}/{total_games}\nThanks for playing!")
+    achievement_tracked()
 
 
 if __name__ == "__main__":
