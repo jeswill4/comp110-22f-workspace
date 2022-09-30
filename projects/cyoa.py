@@ -55,11 +55,9 @@ def winner(urnum: int, compnumb: int) -> int:
 
     if (urnum == 0 and compnumb == 2) or (urnum == 1 and compnumb == 0) or (urnum == 2 and compnumb == 1):
         print(f"{player} WON!!!!\n")
-        achievement_tracked()
         return 0
     else:
         print(f"MACHINE WON!!!!\n")
-        achievement_tracked()
         return 1
 
 
@@ -169,11 +167,11 @@ def winner_award() -> bool:
 def achievement_tracked() -> None:
     global player
     if tie_award() == True:
-        print(f"\nACHIEVEMENT - MIND READER\nTie +3 times or more in row and win")
+        print("\nACHIEVEMENT - MIND READER\nTie +3 times or more in row and win")
     if tie_award_two() == True:
-        print(f"\nACHIEVEMENT - MACHINE INTERPRETER\n Tie +7 times or more in row and win")
+        print("\nACHIEVEMENT - MACHINE INTERPRETER\n Tie +7 times or more in row and win")
     if loser_award() == True:
-        print(f"\nACHIEVEMENT - MACHINE DOMINATION\n Lose +5 times or more in a row")
+        print("\nACHIEVEMENT - MACHINE DOMINATION\n Lose +5 times or more in a row")
     if winner_award() == True:
         print(f"\nACHIEVEMENT - {player} DOMINATION\n Win +5 times or more in a row")
 
