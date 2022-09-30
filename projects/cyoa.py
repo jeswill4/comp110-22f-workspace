@@ -26,6 +26,7 @@ def picked(user: str) -> int:
     if user == picks[2]:
         return 2
 
+
 def numtostr(machine: int) -> str:
     """Converts machines random 3 numbers into correspoding rock, paper, scissor emojies."""
     ROCK =  str = "\U0000270A"
@@ -37,6 +38,7 @@ def numtostr(machine: int) -> str:
         return PAPER
     if machine == 2:
         return SCISSOR
+
 
 def winner(urnum: int, compnumb: int) -> int:
     """Uses users thoughts converted into corresponding number and machines random number. Produces Winner or Loser text and 0 or 1. Also, adds yellow to points if a tie happens."""
@@ -57,6 +59,7 @@ def winner(urnum: int, compnumb: int) -> int:
     else:
         print(f"MACHINE WON!!!!\n")
         return 1
+
 
 def upto(neededtowin: int) -> int:
     """Uses winner function and a quantity of wins needed to produce multiple rock paper scissor games."""
@@ -130,6 +133,7 @@ def tie_award_two() -> bool:
                 return True
     return False
 
+
 def loser_award() -> bool:
     """Tracks MACHINE DOMINATION achievement. Machine wins total of 5 times in a row."""
     global points
@@ -143,6 +147,7 @@ def loser_award() -> bool:
         if in_a_row >= 5:
             return True
     return False
+
 
 def winner_award() -> bool:
     """Tracks PLAYER DOMINATION achievement. Player wins a total of 5 times or more in a row."""
