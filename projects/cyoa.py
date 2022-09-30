@@ -7,7 +7,6 @@ points: str = ""
 player: str = input("Player name: ")
 total_wins: int = 0
 total_games: int = 0
-tie_master_achievement: int = 0
 
 
 def greet() -> None:
@@ -47,7 +46,6 @@ def winner(urnum: int, compnumb: int) -> int:
     print(f"MACHINE SHOOTS {numtostr(compnumb)}! <--> {player} SHOOTS {numtostr(urnum)}!") 
     while urnum == compnumb:
         points += YELLOW_BOX
-        tie_master_achievement += 1
         print("AGAIN")
         urnum: int = picked(input("Thinking of ROCK or PAPER or SCISSOR: ")) 
         compnumb: int = randint(0,2)
@@ -108,32 +106,30 @@ def best_of_seven() -> None:
 
 def tie_award() -> bool:
     """Tracks MIND READER achievement. Have to have a total of 5 ties and 3 in a row followed by a win."""
-    global points, tie_master_achievement
-    if tie_master_achievement >= 3:
-        i: int = 0
-        while i < len(points):
-            in_a_row: int = 0
-            if points[i] == "\U0001F7E8":
-                in_a_row += 1
-            if points[i] == "\U0001F7E5":
-                in_a_row == 0
-            if in_a_row >= 3 and points[i + 1] == "\U0001F7E9":
-                return True
+    global points
+    i: int = 0
+    while i < len(points):
+        in_a_row: int = 0
+        if points[i] == "\U0001F7E8":
+            in_a_row += 1
+        if points[i] == "\U0001F7E5":
+            in_a_row == 0
+        if in_a_row >= 3 and points[i + 1] == "\U0001F7E9":
+            return True
     return False
 
 def tie_award_two() -> bool:
     """Tracks MIND READER achievement. Have to have a total of 5 ties and 3 in a row followed by a win."""
-    global points, tie_master_achievement
-    if tie_master_achievement >= 7:
-        i: int = 0
-        while i < len(points):
-            in_a_row: int = 0
-            if points[i] == "\U0001F7E8":
-                in_a_row += 1
-            if points[i] == "\U0001F7E5":
-                in_a_row == 0
-            if in_a_row >= 7 and points[i + 1] == "\U0001F7E9":
-                return True
+    global points
+    i: int = 0
+    while i < len(points):
+        in_a_row: int = 0
+        if points[i] == "\U0001F7E8":
+            in_a_row += 1
+        if points[i] == "\U0001F7E5":
+            in_a_row == 0
+        if in_a_row >= 7 and points[i + 1] == "\U0001F7E9":
+            return True
     return False
 
 
@@ -190,8 +186,8 @@ def main() -> None:
             best_of_three()
         if pathways == "7":
             best_of_seven()
-        achievement_tracked()
         pathways: int = input("Enter \"0\" for STOP, \"1\" for one game, \"3\" for best of 3, or \"7\" for best of 7: ")
+    achievement_tracked()
     print(f"Your total points: {points}\nWins/total games - {total_wins}/{total_games}\nThanks for playing!")
 
 
