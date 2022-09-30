@@ -91,16 +91,19 @@ def upto(neededtowin: int) -> int:
 def best_of_one() -> None:
     """Second path. One game of rock paper scissor. Counts player_wins/games."""
     upto(1)
+    print(f"Your points: {points}\nWins/total games - {total_wins}/{total_games}")
     
 
 def best_of_three() -> None:
     """Third path. Best out of 3 games of rock paper scissor. Counts player_wins/games."""
     upto(2)
+    print(f"Your points: {points}\nWins/total games - {total_wins}/{total_games}")
 
 
 def best_of_seven() -> None:
     """Fourth path. Best out of 7 games of rock paper scissor. Counts player_wins/games."""
     upto(4)
+    print(f"Your points: {points}\nWins/total games - {total_wins}/{total_games}")
 
 
 def tie_award() -> bool:
@@ -183,16 +186,14 @@ def main() -> None:
     while pathways != "0": 
         if pathways == "1":
             best_of_one()
-            print(f"Your points: {points}\nWins/total games - {total_wins}/{total_games}")
         if pathways == "3":
             best_of_three()
-            print(f"Your points: {points}\nWins/total games - {total_wins}/{total_games}")
         if pathways == "7":
             best_of_seven()
-            print(f"Your points: {points}\nWins/total games - {total_wins}/{total_games}")
+        achievement_tracked()
         pathways: int = input("Enter \"0\" for STOP, \"1\" for one game, \"3\" for best of 3, or \"7\" for best of 7: ")
     print(f"Your total points: {points}\nWins/total games - {total_wins}/{total_games}\nThanks for playing!")
-    
+
 
 if __name__ == "__main__":
   main()
