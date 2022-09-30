@@ -55,9 +55,11 @@ def winner(urnum: int, compnumb: int) -> int:
 
     if (urnum == 0 and compnumb == 2) or (urnum == 1 and compnumb == 0) or (urnum == 2 and compnumb == 1):
         print(f"{player} WON!!!!\n")
+        achievement_tracked()
         return 0
     else:
         print(f"MACHINE WON!!!!\n")
+        achievement_tracked()
         return 1
 
 
@@ -192,7 +194,6 @@ def main() -> None:
             print(f"Your points: {points}\nWins/total games - {total_wins}/{total_games}")
         pathways: int = input("Enter \"0\" for STOP, \"1\" for one game, \"3\" for best of 3, or \"7\" for best of 7: ")
     print(f"Your total points: {points}\nWins/total games - {total_wins}/{total_games}\nThanks for playing!")
-    achievement_tracked()
     
 
 if __name__ == "__main__":
