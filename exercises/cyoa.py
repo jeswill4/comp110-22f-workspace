@@ -174,13 +174,13 @@ def winner_award() -> bool:
 def achievement_tracked() -> None:
     global player
     if tie_award() is True:
-        print("\nACHIEVEMENT - MIND READER\n----Tie +3 times or more in row and win----")
+        print("\nACHIEVEMENT - MIND READER\n<---Tie +3 times or more in row and win--->")
     if tie_award_two() is True:
-        print("\nACHIEVEMENT - MACHINE INTERPRETER\n----Tie +7 times or more in row and win----")
+        print("\nACHIEVEMENT - MACHINE INTERPRETER\n<---Tie +7 times or more in row and win--->")
     if loser_award() is True:
-        print("\nACHIEVEMENT - MACHINE DOMINATION\n----Lose +5 times or more in a row----")
+        print("\nACHIEVEMENT - MACHINE DOMINATION\n<---Lose +5 times or more in a row--->")
     if winner_award() is True:
-        print(f"\nACHIEVEMENT - {player} DOMINATION\n----Win +5 times or more in a row----")
+        print(f"\nACHIEVEMENT - {player} DOMINATION\n<---Win +5 times or more in a row--->")
 
 
 def main() -> None:
