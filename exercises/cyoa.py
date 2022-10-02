@@ -4,7 +4,7 @@ __author__ = "730561311"
 from random import randint
 
 points: str = ""
-player: str = input("Player name: ")
+player: str = ""
 total_wins: int = 0
 total_games: int = 0
 
@@ -12,6 +12,7 @@ total_games: int = 0
 def main() -> None:
     """Where it all starts!"""
     global points, total_wins, total_games
+    player == input("Player name: ")
     greet()
     pathways: str = input("Enter \"0\" for STOP, \"1\" for one game, \"3\" for best of 3, or \"7\" for best of 7: ")
     while pathways != "0": 
@@ -21,7 +22,7 @@ def main() -> None:
             best_of_three()
         if pathways == "7":
             best_of_seven()
-        pathways: int = input("Enter \"0\" for STOP, \"1\" for one game, \"3\" for best of 3, or \"7\" for best of 7: ")
+        pathways = input("Enter \"0\" for STOP, \"1\" for one game, \"3\" for best of 3, or \"7\" for best of 7: ")
     achievement_tracked()
     print(f"Your total points: {points}\nWins/total games - {total_wins}/{total_games}\nThanks for playing!")
 
@@ -69,8 +70,8 @@ def winner(urnum: int, compnumb: int) -> int:
     while urnum == compnumb:
         points += YELLOW_BOX
         print("AGAIN")
-        urnum: int = picked(input("Thinking of ROCK or PAPER or SCISSOR: ")) 
-        compnumb: int = randint(0, 2)
+        urnum = picked(input("Thinking of ROCK or PAPER or SCISSOR: ")) 
+        compnumb = randint(0, 2)
         print(f"MACHINE SHOOTS {numtostr(compnumb)}! <--> {player} SHOOTS {numtostr(urnum)}!")
 
     if (urnum == 0 and compnumb == 2) or (urnum == 1 and compnumb == 0) or (urnum == 2 and compnumb == 1):
@@ -102,10 +103,9 @@ def upto(neededtowin: int) -> int:
             points += RED_BOX
     if machine_wins == neededtowin:
         print(f"Nice try {player}, but you lost to MACHINE.")
-        return total_games and total_wins
     if player_wins == neededtowin:
         print(f"{player} you're to good!")
-        return total_games and total_wins
+    return total_games and total_wins
 
 
 def best_of_one() -> None:
