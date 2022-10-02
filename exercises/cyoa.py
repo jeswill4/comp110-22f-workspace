@@ -10,13 +10,14 @@ total_games: int = 0
 
 
 def greet() -> None:
+    """Greeting, explains game to player. Player vs Machine, rock paper scissor"""
     print("ROCK-PAPER-SCISSOR\nTHE GAME")
     global player
     print(f"{player} vs MACHINE.\n{player}, type what you're thinking of - ROCK/PAPER/SCISSOR\nThen your pick will shoot against the MACHINE!")
    
 
 def picked(user: str) -> int:
-    "Converts answer of users thought (rock, paper, or scissor) into 3 numbers accordingly."
+    """Converts answer of users thought (rock, paper, or scissor) into 3 numbers accordingly."""
     picks: list[str] = ["ROCK", "PAPER", "SCISSOR"]
     if user == picks[0]:
         return 0
@@ -30,9 +31,9 @@ def picked(user: str) -> int:
 
 def numtostr(machine: int) -> str:
     """Converts 3 numbers into correspoding rock, paper, scissor emojies."""
-    ROCK =  str = "\U0000270A"
-    PAPER = str = "\U0000270B"
-    SCISSOR = str = "\U0000270C"
+    ROCK: str = "\U0000270A"
+    PAPER: str = "\U0000270B"
+    SCISSOR: str = "\U0000270C"
     if machine == 0:
         return ROCK
     if machine == 1:
@@ -52,14 +53,14 @@ def winner(urnum: int, compnumb: int) -> int:
         points += YELLOW_BOX
         print("AGAIN")
         urnum: int = picked(input("Thinking of ROCK or PAPER or SCISSOR: ")) 
-        compnumb: int = randint(0,2)
+        compnumb: int = randint(0, 2)
         print(f"MACHINE SHOOTS {numtostr(compnumb)}! <--> {player} SHOOTS {numtostr(urnum)}!")
 
     if (urnum == 0 and compnumb == 2) or (urnum == 1 and compnumb == 0) or (urnum == 2 and compnumb == 1):
         print(f"{player} WON!!!!\n")
         return 0
     else:
-        print(f"MACHINE WON!!!!\n")
+        print("MACHINE WON!!!!\n")
         return 1
 
 
@@ -123,6 +124,7 @@ def tie_award() -> bool:
         i += 1
     return False
 
+
 def tie_award_two() -> bool:
     """Tracks MIND READER achievement. Have to have a total of 5 ties and 3 in a row followed by a win."""
     global points
@@ -172,15 +174,16 @@ def winner_award() -> bool:
 
 
 def achievement_tracked() -> None:
+    """Prints achievement award to let player know of achievement and how it is awarded."""
     global player
     if tie_award() is True:
-        print("\nACHIEVEMENT - MIND READER\n<---Tie +3 times or more in row and win--->")
+        print("\nACHIEVEMENT - MIND READER\n<---Tie +3 times or more in row and win--->\n")
     if tie_award_two() is True:
-        print("\nACHIEVEMENT - MACHINE INTERPRETER\n<---Tie +7 times or more in row and win--->")
+        print("\nACHIEVEMENT - MACHINE INTERPRETER\n<---Tie +7 times or more in row and win--->\n")
     if loser_award() is True:
-        print("\nACHIEVEMENT - MACHINE DOMINATION\n<---Lose +5 times or more in a row--->")
+        print("\nACHIEVEMENT - MACHINE DOMINATION\n<---Lose +5 times or more in a row--->\n")
     if winner_award() is True:
-        print(f"\nACHIEVEMENT - {player} DOMINATION\n<---Win +5 times or more in a row--->")
+        print(f"\nACHIEVEMENT - {player} DOMINATION\n<---Win +5 times or more in a row--->\n")
 
 
 def main() -> None:
@@ -200,4 +203,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-  main()
+    main()
