@@ -9,10 +9,27 @@ total_wins: int = 0
 total_games: int = 0
 
 
+def main() -> None:
+    """Where it all starts!"""
+    global points, total_wins, total_games
+    greet()
+    pathways: str = input("Enter \"0\" for STOP, \"1\" for one game, \"3\" for best of 3, or \"7\" for best of 7: ")
+    while pathways != "0": 
+        if pathways == "1":
+            best_of_one()
+        if pathways == "3":
+            best_of_three()
+        if pathways == "7":
+            best_of_seven()
+        pathways: int = input("Enter \"0\" for STOP, \"1\" for one game, \"3\" for best of 3, or \"7\" for best of 7: ")
+    achievement_tracked()
+    print(f"Your total points: {points}\nWins/total games - {total_wins}/{total_games}\nThanks for playing!")
+
+
 def greet() -> None:
-    """Greeting, explains game to player. Player vs Machine, rock paper scissor"""
-    print("ROCK-PAPER-SCISSOR\nTHE GAME")
+    """Greeting, explains game to player. Player vs Machine, rock paper scissor."""
     global player
+    print("ROCK-PAPER-SCISSOR\nTHE GAME")
     print(f"{player} vs MACHINE.\n{player}, type what you're thinking of - ROCK/PAPER/SCISSOR\nThen your pick will shoot against the MACHINE!")
    
 
@@ -46,7 +63,7 @@ def numtostr(machine: int) -> str:
 
 def winner(urnum: int, compnumb: int) -> int:
     """Uses users thoughts converted into corresponding number and machines random number. Produces Winner or Loser text and 0 or 1. Also, adds yellow to points if a tie happens."""
-    global points, tie_master_achievement
+    global points 
     YELLOW_BOX: str = "\U0001F7E8"
     print(f"MACHINE SHOOTS {numtostr(compnumb)}! <--> {player} SHOOTS {numtostr(urnum)}!") 
     while urnum == compnumb:
@@ -93,18 +110,21 @@ def upto(neededtowin: int) -> int:
 
 def best_of_one() -> None:
     """Second path. One game of rock paper scissor. Counts player_wins/games."""
+    global points, total_wins, total_games
     upto(1)
     print(f"Your points: {points}\nWins/total games - {total_wins}/{total_games}")
     
 
 def best_of_three() -> None:
     """Third path. Best out of 3 games of rock paper scissor. Counts player_wins/games."""
+    global points, total_wins, total_games
     upto(2)
     print(f"Your points: {points}\nWins/total games - {total_wins}/{total_games}")
 
 
 def best_of_seven() -> None:
     """Fourth path. Best out of 7 games of rock paper scissor. Counts player_wins/games."""
+    global points, total_wins, total_games
     upto(4)
     print(f"Your points: {points}\nWins/total games - {total_wins}/{total_games}")
 
@@ -184,22 +204,6 @@ def achievement_tracked() -> None:
         print("\nACHIEVEMENT - MACHINE DOMINATION\n<---Lose +5 times or more in a row--->\n")
     if winner_award() is True:
         print(f"\nACHIEVEMENT - {player} DOMINATION\n<---Win +5 times or more in a row--->\n")
-
-
-def main() -> None:
-    """Where it all starts!"""
-    greet()
-    pathways: str = input("Enter \"0\" for STOP, \"1\" for one game, \"3\" for best of 3, or \"7\" for best of 7: ")
-    while pathways != "0": 
-        if pathways == "1":
-            best_of_one()
-        if pathways == "3":
-            best_of_three()
-        if pathways == "7":
-            best_of_seven()
-        pathways: int = input("Enter \"0\" for STOP, \"1\" for one game, \"3\" for best of 3, or \"7\" for best of 7: ")
-    achievement_tracked()
-    print(f"Your total points: {points}\nWins/total games - {total_wins}/{total_games}\nThanks for playing!")
 
 
 if __name__ == "__main__":
