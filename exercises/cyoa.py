@@ -60,6 +60,7 @@ def numtostr(machine: int) -> str:
         return SCISSOR
     return "nothing"
 
+
 def winner(urnum: int, compnumb: int) -> int:
     """Uses users thoughts converted into corresponding number and machines random number. Produces Winner or Loser text and 0 or 1. Also, adds yellow to points if a tie happens."""
     global points 
