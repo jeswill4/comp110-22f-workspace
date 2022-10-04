@@ -11,8 +11,8 @@ total_games: int = 0
 
 def main() -> None:
     """Where it all starts!"""
-    global points, total_wins, total_games
-    player == input("Player name: ")
+    global points, total_wins, total_games, player
+    player = input("Player name: ")
     greet()
     pathways: str = input("Enter \"0\" for STOP, \"1\" for one game, \"3\" for best of 3, or \"7\" for best of 7: ")
     while pathways != "0": 
