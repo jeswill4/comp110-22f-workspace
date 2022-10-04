@@ -4,7 +4,7 @@
 schools: dict[str, int] 
 
 # Initialize to an empty dictionary
-school = dict()
+schools = dict()
 
 # Set a key-value pairing in the dictionary
 schools["UNC"] = 19400
@@ -48,3 +48,9 @@ print(schools)
 # What happens when a key does not exist?
 # print(schools["UNCC"])
 # gives KeyError: 'UNCC'
+
+# This works
+points: dict[str, int] = {"Kris": 0, "Kaki": 10}
+points["Kaki"] += 100
+print(points)
+
