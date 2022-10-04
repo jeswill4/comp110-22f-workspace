@@ -3,6 +3,7 @@ __author__ = "730561311"
 
 from random import randint
 
+
 points: str = ""
 player: str = ""
 total_wins: int = 0
@@ -24,7 +25,7 @@ def main() -> None:
             best_of_seven()
         pathways = input("Enter \"0\" for STOP, \"1\" for one game, \"3\" for best of 3, or \"7\" for best of 7: ")
     achievement_tracked()
-    print(f"Your total points: {points}\nWins/total games - {total_wins}/{total_games}\nThanks for playing!")
+    print(f"Your points: {points}\nWins/total games - {total_wins}/{total_games}\nThanks for playing!")
 
 
 def greet() -> None:
@@ -66,6 +67,18 @@ def winner(urnum: int, compnumb: int) -> int:
     global points 
     YELLOW_BOX: str = "\U0001F7E8"
     print(f"MACHINE SHOOTS {numtostr(compnumb)}! <--> {player} SHOOTS {numtostr(urnum)}!") 
+    if len(points) == 35:
+        points += "\n"
+        points += "             "
+    if len(points) == 70:
+        points += "\n"
+        points += "             "
+    if len(points) == 105:
+        points += "\n"
+        points += "             "
+    if len(points) == 140:
+        points += "\n"
+        points += "             "
     while urnum == compnumb:
         points += YELLOW_BOX
         print("AGAIN")
@@ -192,6 +205,14 @@ def winner_award() -> bool:
     return False
 
 
+def four_award() -> bool:
+    """Trackes ADDICTED achievement. Player's points take up 4 rows."""
+    global points
+    if len(points) == 105:
+        return True
+    return False
+
+
 def achievement_tracked() -> None:
     """Prints achievement award to let player know of achievement and how it is awarded."""
     global player
@@ -203,7 +224,8 @@ def achievement_tracked() -> None:
         print("\nACHIEVEMENT - MACHINE DOMINATION\n<---Lose +5 times or more in a row--->\n")
     if winner_award() is True:
         print(f"\nACHIEVEMENT - {player} DOMINATION\n<---Win +5 times or more in a row--->\n")
-
+    if four_award() is True:
+        print(f"\nACHIEVEMENT - ADDICTED\n<---{player}'s points take up 4 rows--->\n")
 
 if __name__ == "__main__":
     main()
