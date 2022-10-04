@@ -24,3 +24,14 @@ schools.pop("DUKE")
 # Test for the existence of a key
 is_duke_present: bool = "DUKE" in schools
 print(f"Duke is present: {is_duke_present}")
+
+# Update / Reassign a key-value pair
+schools["UNC"] = 20000
+schools["DUKE"] = 0
+if "DUKE" in schools:
+    print("Found the key 'DUKE' in schools.")
+else:
+    print("No key 'DUKE' in schools.")
+
+schools["NCSU"] = 20000
+print(schools)
