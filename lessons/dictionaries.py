@@ -35,3 +35,12 @@ else:
 
 schools["NCSU"] = 20000
 print(schools)
+
+# Demonstration of dictionary literals
+
+# Empty dictionary literal
+schools = {} # Same as dic()
+print(schools)
+# alternatively, initialize key-value pairs
+schools = {"UNC": 19400, "DUKIE": 6717, "NCSU": 26150}
+print(schools) 
