@@ -73,7 +73,7 @@ def winner(urnum: int, compnumb: int) -> int:
     if len(points) == 84:
         points += "\n"
         points += "             "
-    if len(points) == 129:
+    if len(points) == 133:
         points += "\n"
         points += "             "
     while urnum == compnumb:
