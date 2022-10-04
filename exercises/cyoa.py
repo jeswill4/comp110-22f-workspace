@@ -99,6 +99,7 @@ def upto(neededtowin: int) -> int:
     GREEN_BOX: str = "\U0001F7E9" 
     RED_BOX: str = "\U0001F7E5"
     if len(points) == 182:
+        print("Found end of game. Enter \"0\"")
         return total_games, total_wins
     while neededtowin > player_wins and neededtowin > machine_wins:
         rpspick: int = picked(input("Thinking of ROCK or PAPER or SCISSOR: "))
