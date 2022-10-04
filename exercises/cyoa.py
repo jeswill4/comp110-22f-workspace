@@ -98,6 +98,8 @@ def upto(neededtowin: int) -> int:
     player_wins: int = 0
     GREEN_BOX: str = "\U0001F7E9" 
     RED_BOX: str = "\U0001F7E5"
+    if len(points) == 182:
+        return total_games, total_wins
     while neededtowin > player_wins and neededtowin > machine_wins:
         rpspick: int = picked(input("Thinking of ROCK or PAPER or SCISSOR: "))
         computernumber: int = randint(0, 2)
@@ -203,9 +205,17 @@ def winner_award() -> bool:
 
 
 def four_award() -> bool:
-    """Trackes ADDICTED achievement. Player's points take up 4 rows."""
+    """Tracks ADDICTED achievement. Player's points take up 4 rows."""
     global points
     if len(points) == 105:
+        return True
+    return False
+
+
+def limit_award() -> bool:
+    """Tracks EXPLORER achivement. Found limit of game."""
+    global points
+    if len(points) == 182:
         return True
     return False
 
@@ -223,6 +233,7 @@ def achievement_tracked() -> None:
         print(f"\nACHIEVEMENT - {player} DOMINATION\n<---Win +5 times or more in a row--->\n")
     if four_award() is True:
         print(f"\nACHIEVEMENT - ADDICTED\n<---{player}'s points take up 4 rows--->\n")
-
+    if limit_award() is True:
+        print(f"ACHIEVEMENT - EXPLORER\n<---Found limit of game--->\n")
 if __name__ == "__main__":
     main()
