@@ -43,4 +43,8 @@ schools = {} # Same as dic()
 print(schools)
 # alternatively, initialize key-value pairs
 schools = {"UNC": 19400, "DUKIE": 6717, "NCSU": 26150}
-print(schools) 
+print(schools)
+
+# What happens when a key does not exist?
+# print(schools["UNCC"])
+# gives KeyError: 'UNCC'
