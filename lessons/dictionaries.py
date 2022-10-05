@@ -54,3 +54,10 @@ points: dict[str, int] = {"Kris": 0, "Kaki": 10}
 points["Kaki"] += 100
 print(points)
 
+# Example looping over the keys of a dict
+for key in schools:
+    print(f"Key: {key} -> Value: {schools[key]}")
+
+for school in schools:
+    print(f"Key: {school} -> Value: {schools[school]}")
+
