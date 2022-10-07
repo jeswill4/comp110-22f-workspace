@@ -3,7 +3,7 @@
 __author__ = "730561311"
 
 
-def invert(inversion: dict[str,str]) -> dict[str,str]:
+def invert(inversion: dict[str, str]) -> dict[str,str]:
     """Invert should swap key with values."""
     for key in inversion: 
         og_key = key
@@ -14,7 +14,7 @@ def invert(inversion: dict[str,str]) -> dict[str,str]:
         key -= og_key
 
 
-def favorite_colors(colors: dict[str,str]) -> str:
+def favorite_colors(colors: dict[str, str]) -> str:
     """Names, favorite color. Returns most popular color. If tie return 1st to appear color of the tie."""
     color_list: list[str] = list()
     color_quantity: list[int] = list()
@@ -42,9 +42,12 @@ def favorite_colors(colors: dict[str,str]) -> str:
     return set_highest 
     
 
+def count(count_dracula: list[str]) -> dict[str, int]:
+    """Count produces dictionary of a list with [list str, count of # times that str appeared in list]."""
+    empty_dict: dict[str, int]
+    empty_dict = {}
+    
 
-
-count: dict[,]
 
 
 
