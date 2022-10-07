@@ -2,3 +2,12 @@
 
 __author__ = "730561311"
 
+
+invert
+
+count
+
+favorite_colors
+
+
+
