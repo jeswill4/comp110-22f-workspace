@@ -11,13 +11,14 @@ def invert(inversion: dict[str, str]) -> dict[str,str]:
         key = og_value
 
 
-def favorite_colors(colors: dict[str, str]) -> str:
+def favorite_color(colors: dict[str, str]) -> str:
     """Names, favorite color. Returns most popular color. If tie return 1st to appear color of the tie."""
     color_list: list[str] = list()
     color_quantity: list[int] = list()
     set_highest: str = ""
     for key in colors:
-        color_list.append(colors(key))
+        color: str = colors(key)
+        color_list.append(color)
     i: int = 0
     m: int = 1 
     n: int = 0
