@@ -16,9 +16,11 @@ def favorite_color(colors: dict[str, str]) -> str:
     color_list: list[str] = list()
     color_quantity: list[int] = list()
     set_highest: str = ""
-    for key in colors:
-        color: str = colors(key)
-        color_list.append(color)
+    i: int = 0
+    while i < len(colors):
+        for key in colors:
+            color_list[i] = (colors(key))
+        i += 1
     i: int = 0
     m: int = 1 
     n: int = 0
