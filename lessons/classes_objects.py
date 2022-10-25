@@ -7,15 +7,15 @@ class Pizza:
     toppings: int
     extra_cheese: bool
 
-def price(pizza: Pizza) -> float:
+def price(self: Pizza) -> float:
     """Calculate the price of a Pizza."""
     total: float = 0.0
-    if pizza.size == "large":
+    if self.size == "large":
         total += 10.0 
     else: 
         total += 8.0 
-    total += pizza.toppings * 0.75
-    if pizza.extra_cheese:
+    total += self.toppings * 0.75
+    if self.extra_cheese:
         total += 1.0
     return total
 
