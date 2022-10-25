@@ -25,4 +25,4 @@ a_pizza: Pizza = Pizza()
 a_pizza.size = "large"
 a_pizza.toppings = 3
 a_pizza.extra_cheese = False
-print(f"Price: ${price(a_pizza)}")
+print(f"Price: ${price(a_pizza.price())}")
