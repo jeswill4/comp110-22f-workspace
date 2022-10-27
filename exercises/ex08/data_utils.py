@@ -42,12 +42,10 @@ def select(not_m: dict[str, list[str]], copy_c: list[str]) -> dict[str, list[str
 def count(value_l: list[str]) -> dict[str, int]:
     """Counter of each key with a unique value."""
     counter: dict[str, int] = []
-    for item in value_l:
-        counter.append(item) 
-        if item in counter:
-            counter[item] += 1
-        else:
-            counter[item] = 1
+    if value_l in counter:
+        counter[value_l] += 1
+    else:
+        counter[value_l] = 1
     return counter 
 
 
