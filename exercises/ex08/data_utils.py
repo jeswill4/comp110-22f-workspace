@@ -35,6 +35,16 @@ def columnar(table: list[dict[str,str]]) -> dict[str, list[str]]:
         the_list.append(column_values(table, table[column]))
 
 
+def head(col_table: dict[str, list[str]], row_n: int) -> dict[str, list[str]]:
+    """New column based table with only the first n rows fo data."""
+    header: dict[str, list[str]] = []
+    header = col_table
+    for item in col_table:
+        n_value: list[str] = []
+        for items in col_table[row_n]:
+            n_value.append(items)
+            header[item].append(n_value)
+
 def select(not_m: dict[str, list[str]], copy_c: list[str]) -> dict[str, list[str]]:
     """Produce new column-based table wiht only a specific subset of the original columns."""
     new_copy: dict[str, list[str]] = []
