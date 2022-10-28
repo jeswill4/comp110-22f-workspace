@@ -20,13 +20,19 @@ def read_csv_rows(entirety: str) -> list[dict[str,str]]:
 
 def column_values(list_rows: list[dict[str, str]], column_name: str) -> list[str]:
     """Makes column names."""
-    column_values: list[str] = []
+    column_values: list[str] = [] 
+    if column_name in list_rows:
+        list_rows[column_name] += column_values 
     return column_values
 
 
 def columnar(table: list[dict[str,str]]) -> dict[str, list[str]]:
     """Make a table represented as a list of rows into a dictionary of columns."""
     the_dict: dict[str, list[str]] = []
+    for line in table:
+        for char in line:
+            if char >= 'a' and char <= 'z':
+                column_values(the_dict, char)
     return the_dict
 
 
