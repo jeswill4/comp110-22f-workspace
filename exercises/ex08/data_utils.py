@@ -21,18 +21,13 @@ def read_csv_rows(entirety: str) -> list[dict[str,str]]:
 def column_values(list_rows: list[dict[str, str]], column_name: str) -> list[str]:
     """Makes column names."""
     column_values: list[str] = []
-    for row in list_rows:
-        if column_name in list_rows:
-            column_values.append(row)
     return column_values
 
 
 def columnar(table: list[dict[str,str]]) -> dict[str, list[str]]:
     """Make a table represented as a list of rows into a dictionary of columns."""
     the_dict: dict[str, list[str]] = []
-    the_list: list[str] = []
-    for column in table:
-        the_list.append(column_values(table, table[column]))
+    return the_dict
 
 
 def head(col_table: dict[str, list[str]], row_n: int) -> dict[str, list[str]]:
@@ -44,6 +39,7 @@ def head(col_table: dict[str, list[str]], row_n: int) -> dict[str, list[str]]:
         for items in col_table[row_n]:
             n_value.append(items)
             header[item].append(n_value)
+    return header
 
 def select(not_m: dict[str, list[str]], copy_c: list[str]) -> dict[str, list[str]]:
     """Produce new column-based table wiht only a specific subset of the original columns."""
