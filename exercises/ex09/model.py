@@ -43,6 +43,14 @@ class Cell:
     def color(self) -> str:
         """Return the color representation of a cell."""
         return "black"
+    
+    def contract_disease(self) -> None:
+        """Changes if in contact with sick cell to a sick cell, if infected long enough changes to immune."""
+        if self == constants.VULNERABLE:
+            self.sickness = constants.VULNERABLE
+        if self == constants.INFECTED:
+            self.sickness = constants.INFECTED
+
 
 
 class Model:
