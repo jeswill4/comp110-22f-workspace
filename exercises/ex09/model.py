@@ -6,7 +6,7 @@ from exercises.ex09 import constants
 from math import sin, cos, pi
 
 
-__author__ = ""  # TODO
+__author__ = "730561311"
 
 
 class Point:
@@ -37,10 +37,6 @@ class Cell:
         self.location = location
         self.direction = direction
 
-    # Part 1) Define a method named `tick` with no parameters.
-    # Its purpose is to reassign the object's location attribute
-    # the result of adding the self object's location with its
-    # direction. Hint: Look at the add method.
     def tick(self) -> None:
         self.location = self.location.add(self.direction)
 
