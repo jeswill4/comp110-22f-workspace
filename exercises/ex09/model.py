@@ -87,7 +87,7 @@ class Model:
             cell.direction.x *= -1.0
         if cell.location.y > constants.MAX_Y:
             cell.location.y = constants.MAX_Y
-            cell.direction.y *+ -1.0
+            cell.direction.y *= -1.0
         if cell.location.x < constants.MIN_X:
             cell.location.x = constants.MIN_X
             cell.direction.x *= -1.0
