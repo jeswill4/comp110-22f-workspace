@@ -42,9 +42,9 @@ class Cell:
 
     def color(self) -> str:
         """Return the color representation of a cell."""
-        if :
+        if Cell.is_vulnerable == True:
             return "gray"
-        if :
+        if Cell.is_infected == True:
             return "deep pink"
     
     def contract_disease(self) -> None:
@@ -74,7 +74,7 @@ class Model:
     def __init__(self, cells: int, speed: float):
         """Initialize the cells with random locations and directions."""
         self.population = []
-        if self.infected_num >= cells or self.infected_num<= 0:
+        if self.infected_num >= cells or self.infected_num <= 0:
             return ValueError
         for _ in range(self.infected_num):
             start_location: Point = self.random_location()
