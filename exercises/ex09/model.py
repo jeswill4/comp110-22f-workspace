@@ -42,14 +42,26 @@ class Cell:
 
     def color(self) -> str:
         """Return the color representation of a cell."""
-        return "black"
+        if :
+            return "gray"
+        if :
+            return "deep pink"
     
     def contract_disease(self) -> None:
         """Changes if in contact with sick cell to a sick cell, if infected long enough changes to immune."""
+        self.sickness = constants.INFECTED
+
+    def is_vulnerable(self) -> bool:    
         if self == constants.VULNERABLE:
-            self.sickness = constants.VULNERABLE
+            return True
+        else:
+            return False
+    
+    def is_infected(self) -> bool:
         if self == constants.INFECTED:
-            self.sickness = constants.INFECTED
+            return True
+        else:
+            return False
 
 
 
@@ -58,14 +70,18 @@ class Model:
 
     population: list[Cell]
     time: int = 0
-
+    infected_num: int = 1
     def __init__(self, cells: int, speed: float):
         """Initialize the cells with random locations and directions."""
         self.population = []
-        for _ in range(cells):
+        if self.infected_num >= cells or self.infected_num<= 0:
+            return ValueError
+        for _ in range(self.infected_num):
             start_location: Point = self.random_location()
             start_direction: Point = self.random_direction(speed)
             cell: Cell = Cell(start_location, start_direction)
+            self.population.append(cell)
+        for _ in range(cells - self.infected_num):
             self.population.append(cell)
     
     def tick(self) -> None:
