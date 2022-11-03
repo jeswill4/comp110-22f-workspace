@@ -3,7 +3,7 @@
 from __future__ import annotations
 from random import random
 from exercises.ex09 import constants
-from math import sin, cos, pi
+from math import sin, cos, pi, sqrt
 
 
 __author__ = "730561311"
@@ -24,6 +24,11 @@ class Point:
         x: float = self.x + other.x
         y: float = self.y + other.y
         return Point(x, y)
+    
+    def distance(self, another_d: Point) -> float:
+        """Returns distance between point's object."""
+        d: float = sqrt((self.x - another_d.x)**2 + (self.y - another_d.y)**2)
+        return d
 
 
 class Cell:
@@ -38,6 +43,7 @@ class Cell:
         self.direction = direction
 
     def tick(self) -> None:
+        """Updates constant movement of dot's location."""
         self.location = self.location.add(self.direction)
 
     def color(self) -> str:
@@ -51,18 +57,27 @@ class Cell:
         """Changes if in contact with sick cell to a sick cell, if infected long enough changes to immune."""
         self.sickness = constants.INFECTED
 
-    def is_vulnerable(self) -> bool:    
+    def is_vulnerable(self) -> bool: 
+        """If dot has never been infected return true for vulnerability to sickness."""   
         if self.sickness == constants.VULNERABLE:
             return True
         else:
             return False
     
     def is_infected(self) -> bool:
+        """If infected return true for sick."""
         if self.sickness == constants.INFECTED:
             return True
         else:
             return False
-
+    
+    def contact_with(self, another: Point) -> None:
+        """When two dots come into contact and one is infected, spread infection to both dots."""
+        if Cell.is_infected(self) == True and Cell.is_vulnerable(another) == True or Cell.is_infected(another) == True and Cell.is_vulnerable(self):
+            if Cell.is_vulnerable(self) == True:
+                Cell.contract_disease(self)
+            if Cell.is_vulnerable(another) == True:
+                Cell.contract_disease(another)
 
 
 class Model:
@@ -94,7 +109,8 @@ class Model:
         for cell in self.population: 
             cell.tick()
             self.enforce_bounds(cell)
-
+        self.check_contacts(cell)
+    
     def random_location(self) -> Point:
         """Generate a random location."""
         start_x: float = random() * constants.BOUNDS_WIDTH - constants.MAX_X
@@ -122,7 +138,17 @@ class Model:
         if cell.location.y < constants.MIN_Y:
             cell.location.y = constants.MIN_Y
             cell.direction.y *= -1.0
-
+    
+    def check_contacts(self, another_dot: Point) -> None:
+        """Checks to see if two dots come into contact."""
+        a: int = 0
+        b: int = 1
+        for index in range(len(self.population)):
+            for dot in (self.population[a], self.population[b]):
+                if Point.distance(self, another_dot) < constants.CELL_RADIUS:
+                    Cell.contact_with(self, another_dot)
+            a += 2
+            b += 2
 
     def is_complete(self) -> bool:
         """Method to indicate when the simulation is complete."""
