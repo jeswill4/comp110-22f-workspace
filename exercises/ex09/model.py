@@ -71,7 +71,7 @@ class Cell:
         else:
             return False
     
-    def contact_with(self, another: Point) -> None:
+    def contact_with(self, another: Cell) -> None:
         """When two dots come into contact and one is infected, spread infection to both dots."""
         if Cell.is_infected(self) == True and Cell.is_vulnerable(another) == True or Cell.is_infected(another) == True and Cell.is_vulnerable(self):
             if Cell.is_vulnerable(self) == True:
@@ -144,9 +144,9 @@ class Model:
         a: int = 0
         b: int = 1
         another_cell == self.population[b]
-        for index in range(len(self.population)):
-            for dot in another_cell:
-                if Point.distance(dot, self.population[a]) < constants.CELL_RADIUS:
+        for index in self.population:
+            for dot in index:
+                if Point.distance(dot[a], dot[b]) < constants.CELL_RADIUS:
                     Cell.contact_with(self.population[a], another_cell)
             a += 2
             b += 2
