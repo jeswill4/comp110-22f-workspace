@@ -42,9 +42,9 @@ class Cell:
 
     def color(self) -> str:
         """Return the color representation of a cell."""
-        if Cell.is_vulnerable == True:
+        if self.is_vulnerable() == True:
             return "gray"
-        if Cell.is_infected == True:
+        if self.is_infected() == True:
             return "deep pink"
     
     def contract_disease(self) -> None:
@@ -52,13 +52,13 @@ class Cell:
         self.sickness = constants.INFECTED
 
     def is_vulnerable(self) -> bool:    
-        if self == constants.VULNERABLE:
+        if self.sickness == constants.VULNERABLE:
             return True
         else:
             return False
     
     def is_infected(self) -> bool:
-        if self == constants.INFECTED:
+        if self.sickness == constants.INFECTED:
             return True
         else:
             return False
@@ -76,12 +76,10 @@ class Model:
         self.population = []
         if self.infected_num >= cells or self.infected_num <= 0:
             return ValueError
-        for _ in range(self.infected_num):
+        for _ in range(cells):
             start_location: Point = self.random_location()
             start_direction: Point = self.random_direction(speed)
             cell: Cell = Cell(start_location, start_direction)
-            self.population.append(cell)
-        for _ in range(cells - self.infected_num):
             self.population.append(cell)
     
     def tick(self) -> None:
