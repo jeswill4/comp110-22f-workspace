@@ -109,7 +109,7 @@ class Model:
         for cell in self.population: 
             cell.tick()
             self.enforce_bounds(cell)
-        self.check_contacts(cell)
+        self.check_contacts(self)
     
     def random_location(self) -> Point:
         """Generate a random location."""
@@ -139,14 +139,15 @@ class Model:
             cell.location.y = constants.MIN_Y
             cell.direction.y *= -1.0
     
-    def check_contacts(self, another_dot: Point) -> None:
+    def check_contacts(self, another_cell: Cell) -> None:
         """Checks to see if two dots come into contact."""
         a: int = 0
         b: int = 1
+        another_cell == self.population[b]
         for index in range(len(self.population)):
-            for dot in (self.population[a], self.population[b]):
-                if Point.distance(self, another_dot) < constants.CELL_RADIUS:
-                    Cell.contact_with(self, another_dot)
+            for dot in another_cell:
+                if Point.distance(dot, self.population[a]) < constants.CELL_RADIUS:
+                    Cell.contact_with(self.population[a], another_cell)
             a += 2
             b += 2
 
