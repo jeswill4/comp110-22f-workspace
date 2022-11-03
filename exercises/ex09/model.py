@@ -70,13 +70,19 @@ class Model:
 
     population: list[Cell]
     time: int = 0
-    infected_num: int = 1
+    infected_num: int = constants.BEGININF
     def __init__(self, cells: int, speed: float):
         """Initialize the cells with random locations and directions."""
         self.population = []
         if self.infected_num >= cells or self.infected_num <= 0:
             return ValueError
-        for _ in range(cells):
+        for _ in range(Model.infected_num):
+            start_location: Point = self.random_location()
+            start_direction: Point = self.random_direction(speed)
+            cel: Cell = Cell(start_location, start_direction)
+            Cell.contract_disease(cel)
+            self.population.append(cel)
+        for _ in range(Model.infected_num, cells):
             start_location: Point = self.random_location()
             start_direction: Point = self.random_direction(speed)
             cell: Cell = Cell(start_location, start_direction)
