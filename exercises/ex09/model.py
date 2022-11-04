@@ -142,14 +142,14 @@ class Model:
     def check_contacts(self, another_cell: Cell) -> None:
         """Checks to see if two dots come into contact."""
         a: int = 0
-        b: int = 1
-        another_cell == self.population[b]
+        another_cell == self.population[a]
+        if another_cell == self.population:
+            a += 1 
         for index in self.population:
             for dot in index:
-                if Point.distance(dot[a], dot[b]) < constants.CELL_RADIUS:
-                    Cell.contact_with(self.population[a], another_cell)
-            a += 2
-            b += 2
+                if Point.distance(dot.location, dot[a].location) < constants.CELL_RADIUS:
+                    Cell.contact_with(self.population, another_cell)
+            a += 1
 
     def is_complete(self) -> bool:
         """Method to indicate when the simulation is complete."""
