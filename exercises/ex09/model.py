@@ -129,7 +129,7 @@ class Model:
             self.enforce_bounds(cell)
             if cell.sickness == constants.INFECTED:
                 time_infected: int = 0
-                time_infected == cell.tick()
+                time_infected == self.time
                 if time_infected >= constants.RECOVERY_PERIOD:
                     cell.sickness == constants.IMMUNE
         self.check_contacts(self)
