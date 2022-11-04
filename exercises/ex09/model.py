@@ -83,7 +83,7 @@ class Cell:
 
     def immunize(self) -> None:
         """Assigns constant IMMUNE to the sickness attribute of a Cell."""
-        self.sickness == constants.IMMUNE
+        self.sickness = constants.IMMUNE
 
     def is_immune(self) -> bool:
         """Returns True when a cell is IMMUNE/ sickness == -1."""
@@ -109,13 +109,13 @@ class Model:
             cel: Cell = Cell(start_location, start_direction)
             Cell.contract_disease(cel)
             self.population.append(cel)
-        for _ in range(infected_num, immune_num):
+        for _ in range(infected_num, infected_num + immune_num):
             start_location: Point = self.random_location()
             start_direction: Point = self.random_direction(speed)
             celll: Cell = Cell(start_location, start_direction)
-            Cell.contract_disease(celll)
+            Cell.immunize(celll)
             self.population.append(celll)
-        for _ in range(immune_num, cells):
+        for _ in range(infected_num + immune_num, cells):
             start_location: Point = self.random_location()
             start_direction: Point = self.random_direction(speed)
             cell: Cell = Cell(start_location, start_direction)
@@ -127,11 +127,10 @@ class Model:
         for cell in self.population: 
             cell.tick()
             self.enforce_bounds(cell)
-            if cell.sickness == constants.INFECTED:
-                time_infected: int = 0
-                time_infected == self.time
-                if time_infected >= constants.RECOVERY_PERIOD:
-                    cell.sickness == constants.IMMUNE
+            if Cell.is_infected(cell) == True:
+                cell.sickness += 1
+                if cell.sickness == constants.RECOVERY_PERIOD:
+                    Cell.immunize(cell)
         self.check_contacts(self)
     
     def random_location(self) -> Point:
@@ -175,6 +174,6 @@ class Model:
         for cell in self.population:
             if Cell.is_immune(cell) == True or Cell.is_vulnerable(cell) == True:
                 total_f += 1
-        if total_f == constants.CELL_COUNT:
-            return True
+            if total_f == constants.CELL_COUNT:
+                return True
         return False
