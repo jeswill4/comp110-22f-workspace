@@ -48,11 +48,11 @@ class Cell:
 
     def color(self) -> str:
         """Return the color representation of a cell."""
-        if self.is_vulnerable() == True:
+        if self.is_vulnerable() is True:
             return "gray"
-        if self.is_infected() == True:
+        if self.is_infected() is True:
             return "deep pink"
-        if self.is_immune() == True:
+        if self.is_immune() is True:
             return "deep sky blue"
     
     def contract_disease(self) -> None:
@@ -75,10 +75,10 @@ class Cell:
     
     def contact_with(self, another: Cell) -> None:
         """When two dots come into contact and one is infected, spread infection to both dots."""
-        if Cell.is_infected(self) == True and Cell.is_vulnerable(another) == True or Cell.is_infected(another) == True and Cell.is_vulnerable(self) == True:
-            if Cell.is_vulnerable(self) == True:
+        if Cell.is_infected(self) is True and Cell.is_vulnerable(another) is True or Cell.is_infected(another) is True and Cell.is_vulnerable(self) is True:
+            if Cell.is_vulnerable(self) is True:
                 Cell.contract_disease(self)
-            if Cell.is_vulnerable(another) == True:
+            if Cell.is_vulnerable(another) is True:
                 Cell.contract_disease(another)
 
     def immunize(self) -> None:
@@ -92,10 +92,12 @@ class Cell:
         else: 
             return False
 
+
 class Model:
     """The state of the simulation."""
     population: list[Cell]
     time: int = 0
+
     def __init__(self, cells: int, speed: float, infected_num: int, immune_num: int = 0):
         """Initialize the cells with random locations and directions."""
         self.population = []
@@ -127,7 +129,7 @@ class Model:
         for cell in self.population: 
             cell.tick()
             self.enforce_bounds(cell)
-            if Cell.is_infected(cell) == True:
+            if Cell.is_infected(cell) is True:
                 cell.sickness += 1
                 if cell.sickness == constants.RECOVERY_PERIOD:
                     Cell.immunize(cell)
@@ -165,15 +167,20 @@ class Model:
         """Checks to see if two dots come into contact."""
         for index in range(0, len(self.population)):
             for dot in range(index + 1, len(self.population)):
-                    if Point.distance(self.population[index].location, another_cell.population[dot].location) < constants.CELL_RADIUS:
-                        Cell.contact_with(self.population[index], another_cell.population[dot])
+                if Point.distance(self.population[index].location, another_cell.population[dot].location) < constants.CELL_RADIUS:
+                    Cell.contact_with(self.population[index], another_cell.population[dot])
 
     def is_complete(self) -> bool:
         """Method to indicate when the simulation is complete."""
         total_f: int = 0
+        total_d: int = 0
         for cell in self.population:
-            if Cell.is_immune(cell) == True or Cell.is_vulnerable(cell) == True:
+            if Cell.is_immune(cell) is True:
                 total_f += 1
             if total_f == constants.CELL_COUNT:
                 return True
+            elif Cell.is_vulnerable(cell) is True:
+                total_d += 1
+            if total_d == constants.CELL_COUNT:
+                return True    
         return False
