@@ -102,9 +102,9 @@ class Model:
         """Initialize the cells with random locations and directions."""
         self.population = []
         if infected_num >= cells or infected_num <= 0:
-            return ValueError
+            raise ValueError
         if immune_num >= cells or immune_num < 0:
-            return ValueError
+            raise ValueError
         for _ in range(infected_num):
             start_location: Point = self.random_location()
             start_direction: Point = self.random_direction(speed)
@@ -129,10 +129,10 @@ class Model:
         for cell in self.population: 
             cell.tick()
             self.enforce_bounds(cell)
-            if Cell.is_infected(cell) is True:
+            if cell.is_infected() is True:
                 cell.sickness += 1
                 if cell.sickness == constants.RECOVERY_PERIOD:
-                    Cell.immunize(cell)
+                    cell.immunize()
         self.check_contacts(self)
     
     def random_location(self) -> Point:
@@ -167,19 +167,19 @@ class Model:
         """Checks to see if two dots come into contact."""
         for index in range(0, len(self.population)):
             for dot in range(index + 1, len(self.population)):
-                if Point.distance(self.population[index].location, another_cell.population[dot].location) < constants.CELL_RADIUS:
-                    Cell.contact_with(self.population[index], another_cell.population[dot])
+                if self.population[index].location.distance(another_cell.population[dot].location) < constants.CELL_RADIUS:
+                    self.population[index].contact_with(another_cell.population[dot])
 
     def is_complete(self) -> bool:
         """Method to indicate when the simulation is complete."""
         total_f: int = 0
         total_d: int = 0
         for cell in self.population:
-            if Cell.is_immune(cell) is True:
+            if cell.is_immune() is True:
                 total_f += 1
             if total_f == constants.CELL_COUNT:
                 return True
-            elif Cell.is_vulnerable(cell) is True:
+            elif cell.is_vulnerable() is True:
                 total_d += 1
             if total_d == constants.CELL_COUNT:
                 return True    
