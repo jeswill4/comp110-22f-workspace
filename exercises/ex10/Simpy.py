@@ -23,4 +23,18 @@ class Simpy:
         """Fill a simpy's values with a float (filling) num times."""
         while len(self.values) < num:
             self.values.append(filling)
-    # TODO: Your constructor and methods will go here.
+
+    def arange(self, start: float, stop: float, step: float = 1.0) -> None:
+        """Fill values attribute with a range of float values."""
+        assert step != 0.0
+        if step > 0: 
+            current: float = start
+            while current < stop: 
+                self.values.append(current)
+                current += step
+        else: 
+            current: float = start
+            while current > stop:
+                self.values.append(current)
+                current += step
+
