@@ -21,6 +21,6 @@ class Simpy:
     
     def fill(self, filling: float, num: int) -> None:
         """Fill a simpy's values with a float (filling) num times."""
-        while num > len(self.values):
+        while len(self.values) < num:
             self.values.append(filling)
     # TODO: Your constructor and methods will go here.
