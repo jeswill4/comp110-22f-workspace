@@ -92,14 +92,14 @@ class Simpy:
         greater: list[bool] = []
         if isinstance(u, float):
             for item in self.values:
-                if item >= u:
+                if item > u:
                     greater.append(True)
                 else:
                     greater.append(False)
         else:
             assert len(self.values) == len(u.values)
             for i in range(len(self.values)):
-                if self.values[i] >= u.values[i]:
+                if self.values[i] > u.values[i]:
                     greater.append(True)
                 else:
                     greater.append(False)
@@ -109,15 +109,10 @@ class Simpy:
         """Subscription of Simpy objects, can call specific floats in values."""
         if isinstance(rhs, int):
             number = self.values[rhs]
-        elif isinstance(self.values.__gt__): 
-            number: Simpy = Simpy([])
-            if rhs == self:
-                number.values.append()
         else:
             number: Simpy = Simpy([])
-            if self > rhs:
-                number.values.append()
-
-
+            for i in range(len(self.values)):
+                if rhs[i] is True:
+                    number.values.append(self.values[i])
         return number
         
