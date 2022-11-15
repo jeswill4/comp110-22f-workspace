@@ -37,4 +37,87 @@ class Simpy:
             while current > stop:
                 self.values.append(current)
                 current += step
+    
+    def sum(self) -> float:
+        """Return sum of floats in attribute values."""
+        final_sum: float = 0.0
+        for item in self.values:
+            final_sum += item
+        return final_sum
+    
+    def __add__(self, u: Union[Simpy, float]) -> Simpy:
+        """Lets you use + in conjuction with Simpy objects and floats."""
+        new_simpy: Simpy = Simpy([])
+        if isinstance(u, float):
+            for item in self.values:
+                new_simpy.values.append(item + u)
+        else:
+            assert len(self.values) == len(u.values)
+            for i in range(len(self.values)):
+                new_simpy.values.append(self.values[i] + u.values[i])
+        return new_simpy
 
+    def __pow__(self, u: Union[Simpy, float]) -> Simpy:
+        """Lets you use ** in conjuction with Simpy objects and floats."""
+        power: Simpy = Simpy([])
+        if isinstance(u, float):
+            for item in self.values:
+                power.values.append(item ** u)
+        else:
+            assert len(self.values) == len(u.values)
+            for i in range(len(self.values)):
+                power.values.append(self.values[i] ** u.values[i])
+        return power
+    
+    def __eq__(self, u: Union[Simpy, float] ) -> list[bool]:
+        """Produce mask/ list[bool] based on equality of each item in values attribute of another Simpy/float."""
+        mask: list[bool] = []
+        if isinstance(u, float):
+            for item in self.values:
+                if item == u:
+                    mask.append(True)
+                else:
+                    mask.append(False)
+        else: 
+            assert len(self.values) == len(u.values)
+            for i in range(len(self.values)):
+                if self.values[i] == u.values[i]:
+                    mask.append(True)
+                else:
+                    mask.append(False)
+        return mask
+
+    def __gt__(self, u: Union[Simpy, float]) -> list[bool]:
+        """Produce list[bool] based on greater than of each item in values attribute of another Simpy/float."""
+        greater: list[bool] = []
+        if isinstance(u, float):
+            for item in self.values:
+                if item >= u:
+                    greater.append(True)
+                else:
+                    greater.append(False)
+        else:
+            assert len(self.values) == len(u.values)
+            for i in range(len(self.values)):
+                if self.values[i] >= u.values[i]:
+                    greater.append(True)
+                else:
+                    greater.append(False)
+        return greater
+    
+    def __getitem__(self, rhs: Union[int, list[bool]]) -> Union[float, Simpy]:
+        """Subscription of Simpy objects, can call specific floats in values."""
+        if isinstance(rhs, int):
+            number = self.values[rhs]
+        elif isinstance(__gt__): 
+            number: Simpy = Simpy([])
+            if rhs == self:
+                number.values.append()
+        else:
+            number: Simpy = Simpy([])
+            if self > rhs:
+                number.values.append()
+
+
+        return number
+        
