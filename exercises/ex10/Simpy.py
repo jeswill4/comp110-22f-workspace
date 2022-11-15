@@ -8,9 +8,9 @@ __author__ = "730561311"
 
 
 class Simpy:
+    """List of floats, meant to show a simpler NumPy."""
     values: list[float]
     
-
     def __init__(self, items: list[float]):
         """Constructor that takes a list[float] and initializes it to values attribute."""
         self.values = items
@@ -69,7 +69,7 @@ class Simpy:
                 power.values.append(self.values[i] ** u.values[i])
         return power
     
-    def __eq__(self, u: Union[Simpy, float] ) -> list[bool]:
+    def __eq__(self, u: Union[Simpy, float]) -> list[bool]:
         """Produce mask/ list[bool] based on equality of each item in values attribute of another Simpy/float."""
         mask: list[bool] = []
         if isinstance(u, float):
