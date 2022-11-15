@@ -109,7 +109,7 @@ class Simpy:
         """Subscription of Simpy objects, can call specific floats in values."""
         if isinstance(rhs, int):
             number = self.values[rhs]
-        elif isinstance(__gt__): 
+        elif isinstance(self.values.__gt__): 
             number: Simpy = Simpy([])
             if rhs == self:
                 number.values.append()
