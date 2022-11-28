@@ -40,3 +40,16 @@ def last(head: Optional[Node]) -> int:
         raise ValueError("last cannot be called with None")
     else:
         return None
+
+
+def value_at()
+
+
+def max()
+
+
+def linkify()
+
+
+def scale()
+
