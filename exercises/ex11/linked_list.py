@@ -37,19 +37,46 @@ def is_equal(lhs: Optional[Node], rhs: Optional[Node]) -> bool:
 def last(head: Optional[Node]) -> int:
     """Returns the last value of a linked list, or raises a ValueError if the list is empty."""
     if head is None:
-        raise ValueError("last cannot be called with None")
+        raise ValueError("last cannot be called with None.")
+    elif head.next is None:
+        return head.data 
     else:
-        return None
+        return last(head.next)
 
 
-def value_at()
+def value_at(head: Optional[Node], index: int) -> int:
+    """Returns the data of a Node at the given index of the head parameter."""
+    if head is None:
+        raise IndexError("Index is out of bounds on the list.")
+    elif index == 0:
+        return head.data 
+    else:
+        return value_at(head.next, index - 1)
 
 
-def max()
+def max(head: Optional[Node]) -> int:
+    """Returns the maximum data value in the liked list."""
+    if head is None:
+        raise ValueError("Cannot call max with None.")
+    if head.next is None:
+        return head.data
+    maximum: int = max(head.next)
+    if head.data > maximum:
+        return head.data
+    else:
+        return maximum
 
 
-def linkify()
+def linkify(items: list[int]) -> Optional[Node]:
+    """Given items make and return optional node."""
+    head: Optional[Node] = []
+    if len(items) == 0:
+        return head
+    else:
+        head.append(items)
+        linkify(items - head[0])
 
 
-def scale()
+def scale():
+    return None
 
