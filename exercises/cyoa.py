@@ -237,4 +237,5 @@ def achievement_tracked() -> None:
     if limit_award() is True:
         print(f"ACHIEVEMENT - EXPLORER\n<---Found limit of game--->\n")
 if __name__ == "__main__":
-    main()
+    main()  
+    

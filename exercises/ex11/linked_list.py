@@ -71,12 +71,19 @@ def linkify(items: list[int]) -> Optional[Node]:
     """Given items make and return optional node."""
     head: Optional[Node] = []
     if len(items) == 0:
+        return None
+    else:
+        if len(items) == 1:
+            return Node(items[0], None)
+        return Node(items[0], linkify(items[1:]))
+
+
+def scale(head: Optional[Node], factor: int) -> Optional[Node]:
+    """Return new linked list of Nodes where each value is multiplied by the factor."""
+    if head is None:
+        return None
+    if head.next is None:
         return head
     else:
-        head.append(items)
-        linkify(items - head[0])
-
-
-def scale():
-    return None
-
+        head.data == (head.data * factor)
+        return scale(head.next, factor)
