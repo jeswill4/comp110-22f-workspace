@@ -1,6 +1,6 @@
 """FIRE STORM"""
 __author__ = "Gummybear"
-game: int = 2
+game: int = 10
 
 """Stats"""
 hp: int = 100
