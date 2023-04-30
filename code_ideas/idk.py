@@ -6,73 +6,97 @@ game: int = 1
 hp: int = 100
 fire: int = 10
 wind: int = 1
+exp: int = 0
 
 """Duck stats"""
 duckhp: int = 25
 duckfire: int = 4
 duckwind: int = 2
 
-def duck(stat: str) -> int:
-    """Gives stat desired"""
-    if stat == "hp":
-        return duckhp
-    if stat == "fire":
-        return duckfire
-    if stat == "wind":
-        return duckwind
-
 def fight(hp: int, damage: int) -> int:
     """When someone takes damage, gives new HP."""
     new_hp = (hp - damage)
     return new_hp
 
-def introduction(hp: int, fire: int, wind:int) -> None:
-    print("Fire Storm")
-    print("Hp represents health, fire is your attack damage, wind is your speed. If your wind is slower than your enemy's wind, the enemy attacks first. If your health gets below 1 you die. You will be able to add to your stats after leveling up!")
-    print(f"Hp: {hp} \t Fire: {fire} \t Wind: {wind} ")
-    attacks("duck", hp, fire, wind)
+def introduction(hp: int, fire: int, wind:int, duckhp:int, duckfire: int, duckwind: int, exp: int) -> None:
+    print(" ")
+    print(" ")
+    print("                  _______________")
+    print("             _________________________")
+    print("     __________________________________________")
+    print("______________________________________________________")
+    print(" ")
+    print("                    Fire Storm")
+    print(" ")
+    print("______________________________________________________")
+    print("     __________________________________________")
+    print("                  _______________")
+    print(" ")
+    print(" ")
+    print(" ")
+    print(" ")
+    print("Hp represents health, fire is your attack damage, wind is your speed.")
+    print("If your wind is slower than your enemy's wind, the enemy attacks first.")
+    print("If your health gets below 1 you die. You will be able to add to your stats after leveling up!")
+    attacks("duck", hp, fire, wind, duckhp, duckfire, duckwind, exp)
 
-def attacks(attakers_name: str, hp: int, fire: int, wind: int) -> int:
-
-    print(f"{attakers_name} appears")
+def attacks(attakers_name: str, hp: int, fire: int, wind: int, duckhp: int, duckfire: int, duckwind:int, exp: int) -> None:
+    print(" ")
+    print(" ")
+    print(f"               Hp: {hp}   \t Fire: {fire} \t Wind: {wind}")
+    print(" ")
+    print(f"A {attakers_name} appears")
+    print(" ")
     if attakers_name == "duck":
-        print("Hp:", duck("hp"), "Fire: ", duck("fire"), "Wind:", duck("wind"))
+        print(f"               Duck Hp: {duckhp} \t Duck Fire: {duckfire} \t Duck Wind: {duckwind}")
+    attack: str = input("Attack with \"x\"    ")
+    while attack != "x":
+        print("You typed \"x\" wrong")
         attack: str = input("Attack with \"x\"")
-        while attack != "x":
-            print("You typed \"x\" wrong")
-            attack: str = input("Attack with \"x\"")
-        if attack == "x":
-            while duck("hp") > 0:
-                if duck("wind") > wind:
-                    print(f"{attakers_name} attacks first")
-                    hp = fight(hp, duck("fire"))
-                    print(hp)
-                    if hp < 1:
-                        print("Hp = 0 \tGame Over")
-                        exit()
-                    duckhp = fight(duck("hp"), fire)
-                    print(duckhp)
-                    if duckhp == 0:
-                        print(attakers_name, " defeated")
-                        return hp 
-                else:
-                    print("You attack first")
-                    duckhp = fight(duck("hp"), fire)
-                    print(duckhp)
-                    if duckhp == 0:
-                        print(attakers_name, " defeated")
-                        return hp
-                    hp = fight(hp, duck("fire"))
-                    print(hp)
-                    if hp < 1:
-                        print("Hp = 0 \tGame Over")
-                        exit()
-
+    if attack == "x":
+        while duckhp > 0:
+            if duckwind > wind:
+                print(f"{attakers_name} attacks first")
+                hp = fight(hp, duckfire)
+                print(f"hp: {hp}")
+                if hp < 1:
+                    print("Hp = 0 \tGame Over")
+                    exit()
+                duckhp = fight(duckhp, fire)
+                print(f"duck hp: {duckhp}")
+                if duckhp == 0:
+                    print(attakers_name, " defeated")
+                    exp += 1
+            else:
+                print("You attack first")
+                duckhp = fight(duckhp, fire)
+                print(f"duck hp: {duckhp}")
+                if duckhp == 0:
+                    print(attakers_name, " defeated")
+                    exp += 1
+                hp = fight(hp, duckfire)
+                print(f"hp: {hp}")
+                if hp < 1:
+                    print("Hp = 0 \tGame Over")
+                    exit()
+        if exp > 0:
+            print("Level Up!")
+            up: str = input("Increase \"hp\", \"fire\", or \"wind\":    ")
+            if up == hp:
+                hp += 10
+            print("Hp +10")
+            if up == fire:
+                fire += 2
+                print("Fire +2")
+            if up == wind:
+                wind += 1
+                print("Wind +1")
+            exp = 0 
 for round in range(game):
-    introduction(hp, fire, wind)
-    hp = attacks("duck", hp, fire, wind)
+    introduction(hp, fire, wind, duckhp, duckfire, duckwind, exp)
+    print("V    You're good at beating up afflack! Embrace the inferno and go deeper    V")
     continues: str = input("Would you like to continue or save? Type \"c\" or \"s\"")
     if continues == "c":
-        hp = attacks("duck", hp, fire, wind)
+        hp = attacks("duck", hp, fire, wind, duckhp, duckfire, duckwind, exp)
     if continues == "s":
         print("Saved")
