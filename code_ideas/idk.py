@@ -89,6 +89,9 @@ def lvl(exp: int, hp: int, fire: int, wind: int) -> int:
         print(" ")
         print("                    Level Up!")
         up: str = input("Increase \"hp\", \"fire\", or \"wind\":    ")
+        while up != "hp" and up != "fire" and up != "wind" :
+            print("Your answer was not an option. Try again.")
+            up: str = input("Increase \"hp\", \"fire\", or \"wind\":    ")
         if up == "hp":
             hp += 10
             print("Hp +10")
