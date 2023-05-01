@@ -7,11 +7,17 @@ hp: int = 100
 fire: int = 10
 wind: int = 1
 exp: int = 0
+level: int = 0
 
 """Duck stats"""
 duckhp: int = 25
 duckfire: int = 4
 duckwind: int = 2
+
+"""Goose stat"""
+goosehp: int = 32
+goosefire: int = 35
+goosewind: int = 5
 
 def fight(hp: int, damage: int) -> int:
     """When someone takes damage, gives new HP."""
@@ -49,7 +55,10 @@ def attacks(attakers_name: str, hp: int, fire: int, wind: int, duckhp: int, duck
     print(f"A {attakers_name} appears")
     print(" ")
     if attakers_name == "duck":
-        print(f"                       Duck Hp: {duckhp} \t Duck Fire: {duckfire} \t Duck Wind: {duckwind}")
+        print(f"                       {attakers_name} Hp: {duckhp} \t {attakers_name} Fire: {duckfire} \t {attakers_name} Wind: {duckwind}")
+        print(" ")
+    if attakers_name == "goose":
+        print(f"                       {attakers_name} Hp: {duckhp} \t {attakers_name} Fire: {duckfire} \t {attakers_name} Wind: {duckwind}")
         print(" ")
     attack: str = input("Attack with \"x\"    ")
     print(" ")
@@ -67,7 +76,7 @@ def attacks(attakers_name: str, hp: int, fire: int, wind: int, duckhp: int, duck
                     print("Hp = 0 \tGame Over")
                     exit()
                 duckhp = fight(duckhp, fire)
-                print(f"duck hp: {duckhp}")
+                print(f"{attakers_name} hp: {duckhp}")
                 if duckhp < 0:
                     print(attakers_name, " defeated")
                     exp += 1
@@ -75,7 +84,7 @@ def attacks(attakers_name: str, hp: int, fire: int, wind: int, duckhp: int, duck
             else:
                 print("You attack first")
                 duckhp = fight(duckhp, fire)
-                print(f"duck hp: {duckhp}")
+                print(f"{attakers_name}: {duckhp}")
                 if duckhp < 0:
                     print(attakers_name, " defeated")
                     exp += 1
@@ -87,6 +96,7 @@ def attacks(attakers_name: str, hp: int, fire: int, wind: int, duckhp: int, duck
                     exit()
 
 def lvl(exp: int, hp: int, fire: int, wind: int) -> int:
+    """Leveling up!"""
     if exp > 0:
         print(" ")
         print("                         ____-------____")
@@ -123,29 +133,51 @@ levelup = lvl(exp, hp, fire, wind)
 if levelup == (hp + 10):
     hp += 10
     exp = 0
+    level += 1
 if levelup == (fire + 2):
     fire += 2
     exp = 0
+    level += 1
 if levelup == (wind + 1):
     wind += 1
     exp = 0
+    level += 1
 print("V    You're good at beating up afflack! Embrace the inferno and go deeper    V")
-print(f"                Exp: {exp} Hp: {hp} Fire: {fire} Wind: {wind}")
+print(f"                Level: {level} Hp: {hp} Fire: {fire} Wind: {wind}")
 for round in range(game):
     print(" ")
     answered: str = input("Do you want to continue? \"enter\" for yes and anything else for no:    ")
     if answered == "":
-        exp = attacks("duck", hp, fire, wind, duckhp, duckfire, duckwind, exp)
-        levelup = lvl(exp, hp, fire, wind)
-        if levelup == (hp + 10):
-            hp += 10
-            exp = 0
-        if levelup == (fire + 2):
-            fire += 2
-            exp = 0
-        if levelup == (wind + 1):
-            wind += 1
-            exp = 0
-        print(f"Exp: {exp} Hp: {hp} Fire: {fire} Wind: {wind}")
+        if level < 3:
+            exp = attacks("duck", hp, fire, wind, duckhp, duckfire, duckwind, exp)
+            levelup = lvl(exp, hp, fire, wind)
+            if levelup == (hp + 10):
+                hp += 10
+                exp = 0
+                level += 1
+            if levelup == (fire + 2):
+                fire += 2
+                exp = 0
+                level += 1
+            if levelup == (wind + 1):
+                wind += 1
+                exp = 0
+                level += 1
+        if level >= 3 and level < 6:
+            exp = attacks("goose", hp, fire, wind, goosehp, goosefire, goosewind, exp)
+            levelup = lvl(exp, hp, fire, wind)
+            if levelup == (hp + 10):
+                hp += 10
+                exp = 0
+                level += 1
+            if levelup == (fire + 2):
+                fire += 2
+                exp = 0
+                level += 1
+            if levelup == (wind + 1):
+                wind += 1
+                exp = 0
+                level += 1
+        print(f"Level: {level} Hp: {hp} Fire: {fire} Wind: {wind}")
     if answered != "":
         exit()
