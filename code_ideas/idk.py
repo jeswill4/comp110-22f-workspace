@@ -127,11 +127,8 @@ if levelup == (wind + 1):
 print("V    You're good at beating up afflack! Embrace the inferno and go deeper    V")
 print(f"Exp: {exp} Hp: {hp} Fire: {fire} Wind: {wind}")
 for round in range(game):
-    answered: str = input("Do you want to continue? \"y\" for yes and anything else for no:    ")
-    while answered != "y":
-        print("You typed your answer wrong. Try again.")
-        answered = input("Do you want to continue? \"y\" for yes and anythign else for no:    ")
-    if answered == "y":
+    answered: str = input("Do you want to continue? \"enter\" for yes and anything else for no:    ")
+    if answered == "":
         exp = attacks("duck", hp, fire, wind, duckhp, duckfire, duckwind, exp)
         levelup = lvl(exp, hp, fire, wind)
         if levelup == (hp + 10):
@@ -144,5 +141,5 @@ for round in range(game):
             wind += 1
             exp = 0
         print(f"Exp: {exp} Hp: {hp} Fire: {fire} Wind: {wind}")
-    if answered != "y":
+    if answered != "":
         exit()
