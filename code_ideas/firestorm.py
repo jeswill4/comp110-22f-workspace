@@ -44,16 +44,19 @@ def attacks(attakers_name: str, hp: int, fire: int, wind: int, duckhp: int, duck
     """Getting attacked"""
     print(" ")
     print(" ")
-    print(f"               Hp: {hp}   \t Fire: {fire} \t Wind: {wind}")
+    print(f"                       Hp: {hp}   \t Fire: {fire} \t Wind: {wind}")
     print(" ")
     print(f"A {attakers_name} appears")
     print(" ")
     if attakers_name == "duck":
-        print(f"               Duck Hp: {duckhp} \t Duck Fire: {duckfire} \t Duck Wind: {duckwind}")
+        print(f"                       Duck Hp: {duckhp} \t Duck Fire: {duckfire} \t Duck Wind: {duckwind}")
+        print(" ")
     attack: str = input("Attack with \"x\"    ")
+    print(" ")
     while attack != "x":
         print("You typed \"x\" wrong")
         attack: str = input("Attack with \"x\"")
+        print(" ")
     if attack == "x":
         while duckhp > 0:
             if duckwind > wind:
@@ -86,8 +89,10 @@ def attacks(attakers_name: str, hp: int, fire: int, wind: int, duckhp: int, duck
 def lvl(exp: int, hp: int, fire: int, wind: int) -> int:
     if exp > 0:
         print(" ")
+        print("                         ____-------____")
+        print("                        |   Level Up!   |")
+        print("                         ----_______----")
         print(" ")
-        print("                    Level Up!")
         up: str = input("Increase \"hp\", \"fire\", or \"wind\":    ")
         while up != "hp" and up != "fire" and up != "wind" :
             print("Your answer was not an option. Try again.")
@@ -125,8 +130,9 @@ if levelup == (wind + 1):
     wind += 1
     exp = 0
 print("V    You're good at beating up afflack! Embrace the inferno and go deeper    V")
-print(f"Exp: {exp} Hp: {hp} Fire: {fire} Wind: {wind}")
+print(f"                Exp: {exp} Hp: {hp} Fire: {fire} Wind: {wind}")
 for round in range(game):
+    print(" ")
     answered: str = input("Do you want to continue? \"enter\" for yes and anything else for no:    ")
     if answered == "":
         exp = attacks("duck", hp, fire, wind, duckhp, duckfire, duckwind, exp)
