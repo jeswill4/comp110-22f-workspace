@@ -118,18 +118,21 @@ def lvl(exp: int, hp: int, fire: int, wind: int) -> int:
             up: str = input("Increase \"hp\", \"fire\", or \"wind\":    ")
         if up == "hp":
             hp += 10
+            print(" ")
             print("Hp +10")
             print(" ")
             print(" ")
             return hp
         if up == "fire":
             fire += 2
+            print(" ")
             print("Fire +2")
             print(" ")
             print(" ")
             return fire
         if up == "wind":
             wind += 1
+            print(" ")
             print("Wind +1")
             print(" ")
             print(" ")
