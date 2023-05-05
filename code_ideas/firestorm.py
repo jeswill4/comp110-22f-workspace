@@ -1,5 +1,6 @@
 """FIRE STORM"""
 __author__ = "Gummybear"
+import random 
 game: int = 100
 
 """Stats"""
@@ -18,6 +19,11 @@ duckwind: int = 2
 goosehp: int = 32
 goosefire: int = 35
 goosewind: int = 5
+
+"""Albatross"""
+albatrosshp: int = 64
+albatrossfire: int = 25
+albatrosswind: int = 3
 
 def fight(hp: int, damage: int) -> int:
     """When someone takes damage, gives new HP."""
@@ -60,6 +66,9 @@ def attacks(attakers_name: str, hp: int, fire: int, wind: int, duckhp: int, duck
     if attakers_name == "goose":
         print(f"                       {attakers_name} Hp: {duckhp} \t {attakers_name} Fire: {duckfire} \t {attakers_name} Wind: {duckwind}")
         print(" ")
+    if attakers_name == "albatross": 
+        print(f"                       {attakers_name} Hp: {duckhp} \t {attakers_name} Fire: {duckfire} \t {attakers_name} Wind: {duckwind}")
+        print(" ")
     attack: str = input("Attack with \"x\"    ")
     print(" ")
     while attack != "x":
@@ -72,12 +81,12 @@ def attacks(attakers_name: str, hp: int, fire: int, wind: int, duckhp: int, duck
                 print(f"{attakers_name} attacks first")
                 hp = fight(hp, duckfire)
                 print(f"hp: {hp}")
-                if hp < 1:
+                if hp <= 0:
                     print("Hp = 0 \tGame Over")
                     exit()
                 duckhp = fight(duckhp, fire)
                 print(f"{attakers_name} hp: {duckhp}")
-                if duckhp < 0:
+                if duckhp <= 0:
                     print(attakers_name, " defeated")
                     exp += 1
                     return exp
@@ -85,13 +94,13 @@ def attacks(attakers_name: str, hp: int, fire: int, wind: int, duckhp: int, duck
                 print("You attack first")
                 duckhp = fight(duckhp, fire)
                 print(f"{attakers_name}: {duckhp}")
-                if duckhp < 0:
+                if duckhp <= 0:
                     print(attakers_name, " defeated")
                     exp += 1
                     return exp
                 hp = fight(hp, duckfire)
                 print(f"hp: {hp}")
-                if hp < 1:
+                if hp <= 0:
                     print("Hp = 0 \tGame Over")
                     exit()
 
@@ -149,7 +158,7 @@ for round in range(game):
     answered: str = input("Do you want to continue? \"enter\" for yes and anything else for no:    ")
     if answered == "":
         if level < 3:
-            exp = attacks("duck", hp, fire, wind, duckhp, duckfire, duckwind, exp)
+            exp = attacks("duck", hp, fire, wind, duckhp + (random.randint(0,5)), duckfire +  (random.randint(0,3)), duckwind + (random.randint(-2, 1)), exp)
             levelup = lvl(exp, hp, fire, wind)
             if levelup == (hp + 10):
                 hp += 10
@@ -164,7 +173,22 @@ for round in range(game):
                 exp = 0
                 level += 1
         if level >= 3 and level < 6:
-            exp = attacks("goose", hp, fire, wind, goosehp, goosefire, goosewind, exp)
+            exp = attacks("goose", hp, fire, wind, (goosehp + (random.randint(0,3))), (goosefire + (random.randint(0,1))), (goosewind + (random.randint(-2, 1))), exp)
+            levelup = lvl(exp, hp, fire, wind)
+            if levelup == (hp + 10):
+                hp += 10
+                exp = 0
+                level += 1
+            if levelup == (fire + 2):
+                fire += 2
+                exp = 0
+                level += 1
+            if levelup == (wind + 1):
+                wind += 1
+                exp = 0
+                level += 1
+        if level >= 6:
+            exp = attacks("albatross", hp, fire, wind, (albatrosshp + (random.randint(0,5))), (albatrossfire + (random.randint(0,4))), (albatrosswind + (random.randint(-2, 1))), exp)
             levelup = lvl(exp, hp, fire, wind)
             if levelup == (hp + 10):
                 hp += 10
